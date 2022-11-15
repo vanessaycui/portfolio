@@ -1,0 +1,69 @@
+:root{
+    --navbarlinks: cornflowerblue;
+    --navbarlinkshover: grey;
+
+    --resumebtnbg: orange;
+    --resumebtnhover: grey;
+    --resumebtncolor: grey;
+    --resumebtnhovercolor: orange;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-areas: 
+    "top top top"
+    "left main right";
+    font-family: Arial;
+}
+
+#nav-bar{
+    grid-area: top;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+}
+
+#nav-bar > a{
+    padding: 0 30px;
+    text-decoration: none;
+    color: var(--navbarlinks);
+    font-size: 1.1rem;
+    
+}
+
+#nav-bar > a:hover{
+    color: var(--navbarlinkshover);
+    cursor: cell;
+}
+
+#nav-bar > button{
+    margin: 0 100px 0 50px;
+    padding: 10px 20px;
+    background-color: var(--resumebtnbg);
+    color: var(--resumebtncolor);
+    border-radius: 10px;
+    border: 0;
+    font-size: 1.1rem;
+}
+
+#nav-bar > button:hover{
+    background-color: var(--resumebtnhover);
+    color: var(--resumebtnhovercolor);
+    cursor: pointer;
+}
+
+#left-side-links{
+    grid-area: left;
+
+}
+
+#right-side-links{
+
+    grid-area: right;
+}
+
+main{
+    grid-area: main;
+}
