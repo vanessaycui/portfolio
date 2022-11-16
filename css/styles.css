@@ -71,31 +71,50 @@ main{
 
 #about{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content:center;
     align-items: center;
 }
 #about-nav{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 30px;
+    width: 50px;
 }
+
+.about-content{
+    width: 800px;
+}
+.about-img{
+    width: 200px;
+    margin: 0 50px;
+}
+
 #about-bio{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 
 }
 #bio-img{
     width: 200px;
+    border-radius: 10px;
+    margin: 0 50px;
+
 }
 #about-work{
     display:none;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 #about-school{
     display:none;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #contact{
