@@ -13,7 +13,8 @@ body {
     grid-template-columns: 100px 1fr 100px;
     grid-template-areas: 
     "top top top"
-    "left main right";
+    "left main right"
+    "bottom bottom bottom";
     font-family: Arial;
 }
 
@@ -66,4 +67,46 @@ body {
 
 main{
     grid-area: main;
+}
+
+#about{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#about-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#about-bio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#bio-img{
+    width: 200px;
+}
+#about-work{
+    display:none;
+}
+#about-school{
+    display:none;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    grid-area: bottom;
+    display: flex;
+    justify-content: center;
 }
