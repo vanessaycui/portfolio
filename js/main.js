@@ -5,7 +5,6 @@
 
 const jobTabs = document.querySelector('.job-tabs')
 const allTabs = document.querySelectorAll('.tab')
-const resumeBtn = document.querySelector("#resume-btn")
 
 /*----- event listeners -----*/
 

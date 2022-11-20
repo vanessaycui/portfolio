@@ -1,7 +1,7 @@
 :root {
   --navbarlinks: cornflowerblue;
   --navbarlinkshover: grey;
-  --navbgcolor: white;
+  --navbgcolor: rgba(255,0,0,0.8);
 
   --resumebtnbg: orange;
   --resumebtnhover: grey;
@@ -12,19 +12,15 @@
   --tabactive: pink;
 }
 
-*{
-    width: 100%;
-    height: auto;
-}
-
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: Arial;
-  margin: 0 30px;
+  margin: 0;
 }
+
 .title1{
     font-size: 3.5rem;
     margin: 0 10px;
@@ -41,36 +37,30 @@ body {
     font-size: 1rem; 
 }
 
-#sm-nav-bar{
+.nav-bar-style{
     background-color: var(--navbgcolor);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    height: 75px;
-    margin: 0;
-
+    height: 60px;
+    width: 100%;
 }
 #nav-menu{
-    margin: 10px 50px;
-    padding: 5px 10px;
+  padding: 10px 20px;
+  margin: 0 20px;
 }
-#sm-nav-bar > h1{
+#nav-links{
+  display: none;
+}
+
+#nav-title{
     text-align: left;
-    margin: 10px 20px;
+    margin: 0 0 0 10%;
 }
 
 .sticky {
 	position:fixed;
 	top: 0;
-    right: 0;
-
-}
-  
-#nav-links {
-    display: none;
-}
-#nav-bar > button {
-    display: none;
 }
 
 #left-side-links {
@@ -84,7 +74,8 @@ body {
 main{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 0 10%;
+    width: 100%;
 }
 
 #about {
@@ -98,7 +89,12 @@ main{
   width: 150px;
   border-radius: 10px;
 }
-
+.container{
+  height: 40px;
+}
+.container .job-tabs .tab.active ~ .highlighter{
+  display: none;
+}
 .job-tabs>a {
     display: inline;
     border-left: none;
@@ -109,28 +105,55 @@ main{
  a.tab.active{
     border-bottom: 3px solid var(--tabactive)
 }
-.container{
-    height: 40px;
-}
-
-.container .job-tabs .tab.active ~ .highlighter{
-    display: none;
-}
 
 .work-edu-hide{
     visibility: hidden;
 }
 .work-edu-content{
-    height: 350px;
+   min-height: 400px;
 }
+ul{
+  padding-inline-start: 20px;
+}
+ul li{
+  padding-left: 0;
+  list-style-type: circle;
+}
+
+#edu{
+  margin: 5% 0;
+}
+#edu>p {
+  margin: 0 0 0 5%;
+}
+
 .content{
-    display: block;
+    display: inline-block;
     position: absolute;
+    width: 320px;
 }
+
+#good-food{
+  width:200px;
+}
+.center-align{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 footer{
-    display: none;
+  font-size: 0.9rem;
 }
-@media only screen and (max-width: 1000px){
+
+@media only screen and (max-width: 480px){
+}
+@media only screen and (max-width: 600px){
+}
+@media only screen and (max-width: 768px){
+}
+@media only screen and (max-width: 1080px){
     body {
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
