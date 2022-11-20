@@ -8,47 +8,59 @@
     <title>Vanessa Cui</title>
 </head>
 <body>
-    <nav id = "nav-bar">
-        <a href="#">01. ABOUT ME</a>
-        <a href="#"> 02. PROJECTS</a>
-        <a href="#"> 03. GET IN TOUCH</a>
+    <nav id = "nav-bar" class = "sticky">
+        <div id="nav-links">
+            <a href="#">01. ABOUT ME</a>
+            <a href="#"> 02. PROJECTS</a>
+            <a href="#"> 03. GET IN TOUCH</a>
+        </div>
         <button id="resume-btn">RESUME</button>
+    </nav>
+    <nav id = "sm-nav-bar" class="sticky">
+        <h1> VC</h1>
+        <button id="nav-menu">Menu</button>
     </nav>
     <aside id="left-side-links">
         
-
     </aside>
     <main>
         <section id="intro">
-            <h3> Hi, my name is</h3>
-            <h1> Vanessa Cui.</h1>
-            <h2> I like to design & build things</h2>
-            <h4> I'm a software developer and a licensed engineer based in Toronto, Ontario, Canada</h4>
+            <h3 class="title3"> Hi, my name is</h3>
+            <h1 class="title1"> Vanessa Cui.</h1>
+            <h2 class="title2"> I like to design & build things</h2>
+            <h4 class="title4"> I'm a software developer and a licensed engineer based in Toronto, Ontario, Canada</h4>
         </section>
-        <h2>01. ABOUT</h2>
+        <h2>01. ABOUT ME</h2>
         <section id="about">
-            <nav id="about-nav">
-                <button id="bio-btn"> BIO </button>
-                <button id="work-btn"> WORK </button>
-                <button id="school-btn"> SCHOOL </button>
-            </nav>
-            <div>
-                <section id="about-bio">
-                    <img id="bio-img" src="./img/vanessa3.jpg">
-                    <div class="about-content" >
-                        <h3> Hi, my name is Vanessa!</h3>
-                        <p>I like to design and build real-life structures and things that live on the internet.</p>
-                        <p>As an engineer, I love problem solving, understanding how things work, and making things better. Designing creative and practical solutions is what motivates me. With 5+ years of experience working at various engineering consulting firms, I am well-versed in working with multidisciplinary team of engineers. Additionally, I am adept in conveying technical solutions to clients and contractors. </p>   
-                        <p>I am excited to pivot into a new field where I can make a bigger impact by designing and building things on the internet full-time.</p>
+            <div class="about-content" >
+                <p> Hello! My name is Vanessa and I’m a Software Developer with a professional background in engineering.</p>
+                 <p> I have a passion for designing and building full-stack applications with the potential to positively impact society on a global-scale. With my engineering background, I am adept at critical thinking, problem solving, and finding creative solutions to challenging technical problems. My previous experience in consulting has allowed me to hone my ability to effectively work in a multidisciplinary team of engineers to solve complex problems. 
+
+                            I love learning about new technologies and working on personal projects during my free time. I'm always curious about how things work and I will always try to find ways to make it better!</p>
+                <h4>A few technologies I've been working with lately:</h4>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                </ul>
+            </div>
+            <img id="bio-img" src="./img/vanessa3.jpg">
+        </section>
+        <h2>02. WORK & EDUCATION</h2>
+        <section id="work-edu">
+            <section id="work-section" class="work-edu-section">
+                <div class="container">
+                    <div class="work-edu-side-nav job-tabs">
+                        <a id="job-one" class ="tab tab-1 active"> Jacobs </a>
+                        <a id="job-two" class="tab tab-2"> RJC </a>
+                        <a id="job-three" class="tab tab-3"> SGH </a>
+                        <a id="edu-edu" class="tab tab-4"> Education </a>
+                        <span class="highlighter"></span>  
+
                     </div>
-                </section>
-                <section id="about-work">
-                    <div class="about-img">
-                        <img>
-                        <img>
-                        <img>
-                    </div>
-                    <div class="about-content">
+                </div>
+                <div id="work-content"  class="work-edu-content">
+                    <div id="one" class ="content">
                         <h3>Structural Engineer @ Jacobs</h3>
                         <p>May 2021 - May 2022</p>
                         <ul>
@@ -57,7 +69,8 @@
                             <li>Assisted in the preparation of structural drawings and calculations</li>
                             <li>Analyzed and designed structures in accordance with the Ontario Building Code</li>
                         </ul>
-                
+                    </div>
+                    <div id="two" class="work-edu-hide content">
                         <h3>Structural Restoration EIT @ RJC Engineers</h3>
                         <p>April 2019 - May 2021</p>
                         <ul>
@@ -66,42 +79,28 @@
                             <li>Prepared reports, studies, structural drawings and specifications</li>
                             <li>Designed and analyzed existing building components, upgrades, and additions</li>
                         </ul>
-                
+                    </div>
+                    <div id="three"  class="work-edu-hide content">
                         <h3>Staff I @ Simpson Gumpertz & Heger</h3>
                         <p>April 2016 - November 2017</p>
                         <ul>
                             <li>Performed construction administration activities to ensure general conformance to project design drawings and specification</li>
                         </ul>
                     </div>
-                </section>
-
-                <section id="about-school">
-                    <div class="about-img">
-                        <img>
-                        <img>
+                    <div id="edu" class="work-edu-hide content">
+                        <h3> Software Engineering Immersive @ General Assembly</h3>
+                        <h3>Master of Engineering, Civil Engineering @ University of Toronto '19</h3>
+                        <h3>Bachelor of Applied Science, Civil Engineering  @ University of Waterloo '16</h3>
                     </div>
-                    <div class="about-content">
-                        <h3>General Assembly</h3>
-                        <p>Software Engineering Immersive</p>
+                </div>
+            </section>
 
-                        <h3>University of Toronto '19</h3>
-                        <p>Master of Engineering</p>
-                        <p>Specialization in Structural Engineering</p>
-                    
-                        <h3>University of Waterloo '16</h3>
-                        <p>Bachelor of Applied Science</p>
-                        <p>Civil Engineering</p>
-                        <p>Specialization in Structural Engineering</p>
-                        <p>Management Science Option</p>
-                    </div>
-                </section>
-            </div>
         </section>
-        <h2>02. PROJECTS</h2>
+        <h2>03. PROJECTS</h2>
         <section id="projects">
             
         </section>
-        <h2>03. GET IN TOUCH</h2>
+        <h2>04. GET IN TOUCH</h2>
         <section id="contact">
             
             <p>Currently seeking new opportunities to join an amazing team.</p>
@@ -113,11 +112,14 @@
     <aside id="right-side-links">
 
     </aside>
+
     <footer>
         <p>© 2022 Vanessa Cui</p>
     </footer>
+    
 
     <script src="./js/main.js"></script>
     
 </body>
+
 </html>
