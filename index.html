@@ -19,7 +19,17 @@
             <a href="#"> 03. GET IN TOUCH</a>
             <a href="#"> Resume</a>
         </div>            
-        <button id="nav-menu">Menu</button>
+        <div class="menu-wrapper">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li><a href="#intro">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work-edu">Work & Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <aside id="left-side-links">
         
@@ -31,8 +41,9 @@
             <h2 class="title2"> I like to design & build things</h2>
             <h4 class="title4"> I'm a software developer and a licensed engineer based in Toronto, Ontario, Canada</h4>
         </section>
-        <h2>01. ABOUT ME</h2>
+        
         <section id="about">
+            <h2>01. ABOUT ME</h2>
             <div class="about-content" >
                 <p> Hello! My name is Vanessa and I’m a Software Developer with a professional background in engineering.</p>
                  <p> I have a passion for designing and building full-stack applications with the potential to positively impact society on a global-scale. With my engineering background, I am adept at critical thinking, problem solving, and finding creative solutions to challenging technical problems. My previous experience in consulting has allowed me to hone my ability to effectively work in a multidisciplinary team of engineers to solve complex problems. 
@@ -42,10 +53,11 @@
                 <p> JavaScript, React, Node.js, Express</p>
            
             </div>
-            <img id="bio-img" src="./img/vanessa3.jpg">
+            <img id="bio-img" class="image-border" src="./img/vanessa3.jpg">
         </section>
-        <h2>02. WORK & EDUCATION</h2>
-        <section id="work-edu">
+        
+        <section id="work-edu" class="center-align">
+            <h2>02. WORK & EDUCATION</h2>
             <section id="work-section" class="work-edu-section">
                 <div class="container">
                     <div class="work-edu-side-nav job-tabs">
@@ -57,7 +69,7 @@
 
                     </div>
                 </div>
-                <div id="work-content"  class="work-edu-content">
+                <div id="work-content"  class="work-edu-content center-align">
                     <div id="one" class ="content">
                         <h3>Structural Engineer @ Jacobs</h3>
                         <p>May 2021 - May 2022</p>
@@ -103,25 +115,40 @@
             </section>
 
         </section>
-        <h2>03. PROJECTS</h2>
-        <section id="projects">
-            <div >
-                <img id="good-food" src="img/goodfood-main.png">
-            </div>
-            <div>
+        
+        <section id="projects" class="center-align">
+            <h2>03. PROJECTS</h2>
+            <div id="good-food" class="image-border">
+                <div class="proj-content">
+                    <h1>Good Food</h1>
 
+                </div>
             </div>
-            
+            <div id="snake" class="image-border">
+                <div class="proj-content">
+                    <h1>Snake</h1>
+
+                </div>
+            </div>
         </section>
-        <h2>04. GET IN TOUCH</h2>
+        
         <section id="contact" class="center-align">
+            <h2>04. GET IN TOUCH</h2>
+            <p>I'm currently seeking opportunities to join an awesome team. </p>
+            <p>I would still love to hear from you if you just want to connect!</p>          
+            <button id="email-btn">email</button>
             
-            <p>Currently seeking new opportunities to join an amazing team.</p>
-            <p>Looking forward to hearing from you!</p>            </p>
-            <button>email</button>
+
         </section>
         <footer class="center-align">
-            <p>© 2022 Vanessa Cui</p>
+            <div id="contact-links">
+                <div id="github" class="link-format">
+                </div>
+                <div id="linkedin" class="link-format">
+                </div>
+            </div>
+            <P>© 2022 DESIGNED & BUILT BY VANESSA CUI</P>
+            <p></p>
         </footer>
 
     </main>

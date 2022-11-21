@@ -1,7 +1,10 @@
 :root {
   --navbarlinks: cornflowerblue;
   --navbarlinkshover: grey;
-  --navbgcolor: rgba(255,0,0,0.8);
+  --navbgcolor: rgba(255,0,0,0.5);
+
+  --menubg: blue;
+  --menulinkcolor: pink;
 
   --resumebtnbg: orange;
   --resumebtnhover: grey;
@@ -10,6 +13,11 @@
 
   --tabinactive: grey;
   --tabactive: pink;
+
+  --projcontentbg: rgba(255,255,255,0.5);
+  --projectcontentcolor: white;
+
+  --emailbtnbg: white;
 }
 
 body {
@@ -45,10 +53,7 @@ body {
     height: 60px;
     width: 100%;
 }
-#nav-menu{
-  padding: 10px 20px;
-  margin: 0 20px;
-}
+
 #nav-links{
   display: none;
 }
@@ -57,10 +62,103 @@ body {
     text-align: left;
     margin: 0 0 0 10%;
 }
+.menu-wrapper {
+  margin: 0 10%;
+  z-index: 10;
 
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 36px;
+  height: 6px;
+  background-color: var(--menubg);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  color: var(--menulinkcolor);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 10;
+}
+
+.menu:after, .menu:before {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 6px;
+  background-color: var(--menubg);
+  transition: all 0.25s ease-in-out;
+
+}
+.menu:after {
+  top: 12px;
+}
+.menu:before {
+  top: -12px;
+
+}
+.menu.special{
+  background-color: transparent;
+}
+
+.menu.special::after, .menu.special::before {
+  transition: all 0.3s ease-in-out;
+  width: 18px;
+}
+
+.menu.special::after{
+  transform: translate(-10px, -7px) rotate(405deg);
+}
+.menu.special:before {
+  transform: translate(-1px, 17px) rotate(-405deg);
+}  
+.menu ul.menu-links{
+  margin: 0;
+  padding: 36px 0 0 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.25s ease-in-out;
+  position: absolute;
+  width: 0;
+  height: 0;
+
+}
+.menu ul{
+  position: absolute;
+  top: 13px;
+  height: 100vh;
+  background-color:var(--menubg);
+  right: -15px;
+  pointer-events:none;
+}
+.menu ul.menu-links li>a{
+  text-decoration: none;
+  color: var(--menulinkcolor);
+
+}
+.menu ul.menu-links li {
+  position: relative;
+  top: -23px;
+  right: 23px;
+  width: 100%;
+  padding: 10px 10px;
+  list-style-type: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: right;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+
+
+/*    border-right: 2px solid #7482a5; */
+}
 .sticky {
 	position:fixed;
 	top: 0;
+  z-index: 10;
 }
 
 #left-side-links {
@@ -70,12 +168,18 @@ body {
 #right-side-links {
     display: none;
 }
+#intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
 
 main{
     display: flex;
     flex-direction: column;
-    margin: 0 10%;
-    width: 100%;
+    margin: 0;
+    width: 250px;
 }
 
 #about {
@@ -83,34 +187,40 @@ main{
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0 0 20% 0;
+  padding-top: 80px;
 }
 
 #bio-img {
   width: 150px;
-  border-radius: 10px;
 }
-.container{
-  height: 40px;
+#work-edu{
+  padding-top: 80px;
 }
+
 .container .job-tabs .tab.active ~ .highlighter{
   display: none;
 }
+
 .job-tabs>a {
     display: inline;
     border-left: none;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin-bottom: 10px;
     border-bottom: 3px solid var(--tabinactive);
 }
  a.tab.active{
+    color: var(--tabactive);
     border-bottom: 3px solid var(--tabactive)
 }
 
 .work-edu-hide{
     visibility: hidden;
+    opacity: 0;
 }
 .work-edu-content{
-   min-height: 400px;
+  height: 400px;
+  margin-top: 20px;
 }
 ul{
   padding-inline-start: 20px;
@@ -128,32 +238,137 @@ ul li{
 }
 
 .content{
-    display: inline-block;
+    display:block;
     position: absolute;
-    width: 320px;
+    width: 200px;
+    transition: opacity 0.5s linear;
 }
-
+#projects{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 #good-food{
-  width:200px;
+  background-image: url("/img/goodfood-main.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #5D9594;
+  height: 200px;
+  width: 250px;
+}
+#snake{
+  background-image: url("/img/snake-game.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #222931;
+  height: 200px;
+  width: 250px;
+}
+.proj-content{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 230px;
+  height: 180px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--projcontentbg);
+  color: var(--projectcontentcolor)
+}
+.image-border{
+  border-radius: 10px;
 }
 .center-align{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+
+}
+#projects{
+  margin: 0 0 20% 0;
+  padding-top: 80px;
 }
 
-footer{
+#contact{
+  margin: 0 0 10% 0;
+  padding: 80px 0;
+}
+
+#email-btn{
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 50px;
+  background-color: var(--emailbtnbg);
+}
+#contact-links{
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 10%;
+  width: 100%;
+}
+.link-format{
+  height: 50px;
+  width: 50px;
+}
+#github{
+  background-image: url('/img/github.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#linkedin{
+  background-image: url('/img/linkedin.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+footer>p{
   font-size: 0.9rem;
+  margin: 15% 0 0 0;
+}
+footer{
+  margin: 0 0 5% 0;
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (min-width: 350px){
+  main{
+    width: 300px;
+
+  }
+  .content{
+    width: 300px;
+  }
+
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (min-width: 480px){
+  main{
+    width: 400px;
+
+  }
+  .content{
+    width: 370px;
+  }
+
 }
-@media only screen and (max-width: 768px){
+@media only screen and (min-width: 600px){
+  main{
+    width: 500px;
+  }
+  .content{
+    width: 500px;
+  }
 }
-@media only screen and (max-width: 1080px){
+@media only screen and (min-width: 768px){
+  main{
+    width: 650px;
+  }
+  .content{
+    width: 650px;
+  }
+}
+/* @media only screen and (max-width: 1080px){
     body {
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
@@ -162,6 +377,12 @@ footer{
           "left main right"
           "bottom bottom bottom";
         font-family: Arial;
+      }
+      main{
+        width: 1000px;
+      }
+      .content{
+        width: 1000px;
       }
       #nav-bar {
         position: fixed;
@@ -193,7 +414,9 @@ footer{
       .container {
         position: relative;
         display: flex;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        margin: 15% 0 10% 0;;
       }
       .tab {
         display: block;
@@ -240,4 +463,4 @@ footer{
       }
       
     
-}
+} */
