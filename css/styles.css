@@ -60,12 +60,12 @@ body {
 
 #nav-title{
     text-align: left;
-    margin: 0 0 0 10%;
+    margin: 0 0 0 5%;
 }
+/* hidden links for smaller screens */
 .menu-wrapper {
-  margin: 0 10%;
+  margin: 0 5%;
   z-index: 10;
-
 }
 
 .menu {
@@ -91,8 +91,8 @@ body {
   height: 6px;
   background-color: var(--menubg);
   transition: all 0.25s ease-in-out;
-
 }
+
 .menu:after {
   top: 12px;
 }
@@ -151,10 +151,8 @@ body {
   text-align: right;
   text-transform: uppercase;
   transition: all 0.25s ease-in-out;
-
-
-/*    border-right: 2px solid #7482a5; */
 }
+
 .sticky {
 	position:fixed;
 	top: 0;
@@ -168,18 +166,20 @@ body {
 #right-side-links {
     display: none;
 }
+
+/* main is the giant container around all the content */
+main{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 250px;
+}
+
 #intro{
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    width: 250px;
 }
 
 #about {
@@ -200,9 +200,10 @@ main{
 
 .container{
   overflow: scroll;
-  width: 280px;
+  width: 250px;
   height:50px;
 }
+/* side-navigation for work-education */
 .work-edu-side-nav{
   overflow: scroll;
   width:300px;
@@ -215,6 +216,7 @@ main{
     padding:10px;
     border-bottom: 3px solid var(--tabinactive);
 }
+
  a.tab.active{
     color: var(--tabactive);
     border-bottom: 3px solid var(--tabactive)
@@ -289,13 +291,11 @@ ul li{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
 }
 #projects{
   margin: 0 0 20% 0;
   padding-top: 80px;
 }
-
 #contact{
   margin: 0 0 10% 0;
   padding: 80px 0;
@@ -340,12 +340,15 @@ footer{
 @media only screen and (min-width: 350px){
   main{
     width: 300px;
-
   }
   .content{
     width: 300px;
   }
-
+  .container{
+    overflow: scroll;
+    width: 300px;
+    height:50px;
+  }
 }
 
 @media only screen and (min-width: 480px){
@@ -374,88 +377,66 @@ footer{
     width: 650px;
   }
 }
-@media only screen and (min-width: 1080px){
-    body {
-        display: grid;
-        grid-template-columns: 2fr 2fr 2fr;
-        grid-template-areas:
-          "top top top"
-          "left main right"
-          "bottom bottom bottom";
-        font-family: Arial;
-      }
-      main{
-        width: 1000px;
-      }
-      .content{
-        width: 1000px;
-      }
-      
- 
-      .menu-wrapper{
-        display: none;
-      }
-    
-      #nav-bar > a:hover {
-        color: var(--navbarlinkshover);
-        cursor: cell;
-      }
-      .job-tabs {
-        display: block;
-        position: relative;
-        z-index: 3;
-        width: max-content;
-      }
-      .container {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 15% 0 10% 0;;
-      }
-      .tab {
-        display: block;
-        width: 100px;
-        height: 40px;
-        text-align: left;
-        font-weight: bold;
-        font-size: 14px;
-        padding: 20px 20px 0px 10px;
-        border-left: 3px solid var(--tabinactive);
-        transition: all 0.25s ease;
-      }
-      
-      .tab:hover {
-        color: var(--tabactive);
-        cursor: pointer;
-      }
-      
-      .container .job-tabs .tab.tab-1.active ~ .highlighter {
-        transform: translateY(0px);
-      }
-      .container .job-tabs .tab.tab-2.active ~ .highlighter {
-        transform: translateY(60px);
-      }
-      .container .job-tabs .tab.tab-3.active ~ .highlighter {
-        transform: translateY(120px);
-      }
-      .container .job-tabs .tab.tab-4.active ~ .highlighter {
-        transform: translateY(180px);
-      }
-      
-      .container .job-tabs .highlighter {
-        display: block;
-        background: var(--tabactive);
-        width: 3px;
-        height: 60px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateY(0);
-        transition: transform 0.2s ease;
-        transition-delay: 0.1s;
-        z-index: 10;
-      }
-      
+@media only screen and (min-width: 900px){
+  *{
+    overflow: hidden;
+  };
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    height: 100vh;
+  }
+  main{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #nav-links{
+    display: inline;
+  }
+  .menu-wrapper{
+    display: none;
+  }
+
+  #left-side-links {
+    display: block;
+}
+  
+#right-side-links {
+    display: block;
+}
+/*  content */
+#about{
+  display: none;
+}
+
+#work-edu{
+  display: none;
+}
+
+#projects{
+  display: none;
+}
+
+#contact{
+  display: none;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  margin: 1% auto;
+}
+
+#contact-links{
+  display: none;
+}
+
+
     
 }

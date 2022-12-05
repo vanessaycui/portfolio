@@ -9,14 +9,16 @@ const allTabs = document.querySelectorAll('.tab')
 const contactLinks = document.querySelector('#contact-links')
 const emailBtn = document.querySelector('#email-btn')
 
-let menuBtn = document.querySelector('.menu')
-let menuList = document.querySelector('.menu >.menu-links')
-let menuLinks = document.querySelector('.menu ul')
+const menuBtn = document.querySelector('.menu')
+const menuList = document.querySelector('.menu >.menu-links')
+const menuLinks = document.querySelector('.menu ul')
 
+const navLinks = document.querySelector('#nav-links')
+const allNavLinks = document.querySelectorAll('#nav-links>a')
+const navTitle = document.querySelector('#nav-title>h1')
 
 /*----- event listeners -----*/
 menuBtn.addEventListener('click', (event)=>{
- 
     count++
     if (count%2 !== 0){
       menuList.style.transition=' all 0.25s ease-in-out'
@@ -60,6 +62,24 @@ contactLinks.addEventListener("click", (event)=>{
 emailBtn.addEventListener("click", (event)=>{
     event.preventDefault()
     window.open('mailto:vanessa.y.cui@gmail.com')
+})
+
+navLinks.addEventListener('click', (event)=>{
+    allNavLinks.forEach(link=>{
+        document.querySelector(link.hash).style.display='none'
+    })
+    console.dir(event.target)
+    if (event.target.tagName ==='A'){
+    document.querySelector(event.target.hash).style.display='flex'
+    }
+})
+
+navTitle.addEventListener('click', (event)=>{
+    allNavLinks.forEach(link=>{
+        document.querySelector(link.hash).style.display='none'
+    })
+    document.querySelector("#intro").style.display='flex'
+
 })
 
 
