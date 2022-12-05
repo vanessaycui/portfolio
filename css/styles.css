@@ -198,15 +198,21 @@ main{
   padding-top: 80px;
 }
 
-.container .job-tabs .tab.active ~ .highlighter{
-  display: none;
+.container{
+  overflow: scroll;
+  width: 280px;
+  height:50px;
+}
+.work-edu-side-nav{
+  overflow: scroll;
+  width:300px;
+  height: 50px
 }
 
 .job-tabs>a {
     display: inline;
     border-left: none;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
+    padding:10px;
     border-bottom: 3px solid var(--tabinactive);
 }
  a.tab.active{
@@ -368,7 +374,7 @@ footer{
     width: 650px;
   }
 }
-/* @media only screen and (max-width: 1080px){
+@media only screen and (min-width: 1080px){
     body {
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
@@ -384,23 +390,12 @@ footer{
       .content{
         width: 1000px;
       }
-      #nav-bar {
-        position: fixed;
-        top: 0px;
-        right: 20px;
-        grid-area: top;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 100px;
-      }
       
-      #nav-links > a {
-        padding: 0 30px;
-        text-decoration: none;
-        color: var(--navbarlinks);
-        font-size: 1.1rem;
+ 
+      .menu-wrapper{
+        display: none;
       }
+    
       #nav-bar > a:hover {
         color: var(--navbarlinkshover);
         cursor: cell;
@@ -463,4 +458,4 @@ footer{
       }
       
     
-} */
+}
