@@ -44,8 +44,14 @@ body {
 .title4{
     font-size: 1rem; 
 }
+h2{
+  font-size: 1.3rem;
+}
 
 .nav-bar-style{
+    position: absolute;
+    left:0;
+    top:0;
     background-color: var(--navbgcolor);
     display: flex;
     justify-content: space-between;
@@ -199,13 +205,13 @@ main{
 }
 
 .container{
-  overflow: scroll;
   width: 250px;
-  height:50px;
+  height:75px;
 }
 /* side-navigation for work-education */
 .work-edu-side-nav{
-  overflow: scroll;
+  display: flex;
+  justify-content: center;
   width:300px;
   height: 50px
 }
@@ -330,6 +336,7 @@ ul li{
 }
 
 footer>p{
+  text-align: center;
   font-size: 0.9rem;
   margin: 15% 0 0 0;
 }
@@ -345,10 +352,12 @@ footer{
     width: 300px;
   }
   .container{
-    overflow: scroll;
     width: 300px;
-    height:50px;
   }
+  h2{
+    font-size: 1.5rem;
+  }
+
 }
 
 @media only screen and (min-width: 480px){
@@ -358,6 +367,9 @@ footer{
   }
   .content{
     width: 370px;
+  }
+  h2{
+    font-size: 1.7rem;
   }
 
 }
@@ -377,6 +389,9 @@ footer{
     width: 650px;
   }
 }
+
+/* essentially converting this into a single page*/
+
 @media only screen and (min-width: 900px){
   *{
     overflow: hidden;
@@ -431,12 +446,11 @@ footer{
   position: absolute;
   bottom: 0;
   margin: 1% auto;
+
 }
 
 #contact-links{
   display: none;
 }
-
-
     
 }

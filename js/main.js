@@ -16,8 +16,25 @@ const menuLinks = document.querySelector('.menu ul')
 const navLinks = document.querySelector('#nav-links')
 const allNavLinks = document.querySelectorAll('#nav-links>a')
 const navTitle = document.querySelector('#nav-title>h1')
+const entireWindow = document.querySelector('*')
 
 /*----- event listeners -----*/
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth < 900) {
+        allNavLinks.forEach(link=>{
+            document.querySelector(link.hash).style.display='flex'
+            navTitle.style.pointerEvents= "none"
+        })
+    } else {
+        allNavLinks.forEach(link=>{
+            document.querySelector(link.hash).style.display='none'
+            document.querySelector("#intro").style.display='flex'
+            navTitle.style.pointerEvents= "auto"
+        })
+    }
+  }, true);
+
 menuBtn.addEventListener('click', (event)=>{
     count++
     if (count%2 !== 0){
@@ -40,6 +57,7 @@ menuBtn.addEventListener('click', (event)=>{
   })
 
 jobTabs.addEventListener("click", (event)=>{
+    if (event.target.tagName ==="A"){
     allTabs.forEach(tab => {
         tab.classList.remove("active")
         let section = tab.id.split("-")[1]
@@ -48,7 +66,8 @@ jobTabs.addEventListener("click", (event)=>{
     event.target.classList.add("active")
     let section = event.target.id.split("-")[1]
     document.querySelector('#'+section).classList.remove("work-edu-hide")  
-})
+
+}})
 
 contactLinks.addEventListener("click", (event)=>{
     if (event.target.id === 'github'){
