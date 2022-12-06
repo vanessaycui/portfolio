@@ -1,10 +1,12 @@
 :root {
-  --navbarlinks: cornflowerblue;
+  --navbarlinks: black;
   --navbarlinkshover: grey;
-  --navbgcolor: rgba(255,0,0,0.5);
+  --navbarlinkshoverbg:red;
+  --navbgcolor: rgba(255,255,255,0.8);
 
-  --menubg: blue;
-  --menulinkcolor: pink;
+  --menubg: black;
+  --menulinkbg: rgba(255,255,255,0.8);
+  --menulinkcolor: black;
 
   --resumebtnbg: orange;
   --resumebtnhover: grey;
@@ -18,6 +20,9 @@
   --projectcontentcolor: white;
 
   --emailbtnbg: white;
+  --emailbtncolor:blue;
+  --emailbtnbghover:blue;
+  --emailbtncolorhover:white;
 }
 
 body {
@@ -37,13 +42,16 @@ body {
     font-size: 2rem;
     margin: 0;
 }
+
 .title3{
     font-size: 1.5rem;
     margin: 90px 0 0 0;
 }
+
 .title4{
     font-size: 1rem; 
 }
+
 h2{
   font-size: 1.3rem;
 }
@@ -65,13 +73,17 @@ h2{
 }
 
 #nav-title{
-    text-align: left;
-    margin: 0 0 0 5%;
+    text-align: center;
+    width: 60px;
+    margin: 0 0 0 3%;
 }
 /* hidden links for smaller screens */
 .menu-wrapper {
   margin: 0 5%;
   z-index: 10;
+}
+.circle-links{
+  cursor: pointer;
 }
 
 .menu {
@@ -136,7 +148,7 @@ h2{
   position: absolute;
   top: 13px;
   height: 100vh;
-  background-color:var(--menubg);
+  background-color:var(--menulinkbg);
   right: -15px;
   pointer-events:none;
 }
@@ -165,8 +177,15 @@ h2{
   z-index: 10;
 }
 
-#left-side-links {
-    display: none;
+#left-side-links{
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 60px;
+  left: 3%;
+  width: 57px; 
+  /* width match nav title */
 }
   
 #right-side-links {
@@ -215,15 +234,17 @@ main{
   width:300px;
   height: 50px
 }
-
 .job-tabs>a {
     display: inline;
     border-left: none;
     padding:10px;
     border-bottom: 3px solid var(--tabinactive);
 }
+.job-tabs>a:hover {
+  cursor: pointer;
+}
 
- a.tab.active{
+a.tab.active{
     color: var(--tabactive);
     border-bottom: 3px solid var(--tabactive)
 }
@@ -243,25 +264,25 @@ ul li{
   padding-left: 0;
   list-style-type: circle;
 }
-
 #edu{
   margin: 5% 0;
 }
 #edu>p {
   margin: 0 0 0 5%;
 }
-
 .content{
     display:block;
     position: absolute;
     width: 200px;
     transition: opacity 0.5s linear;
 }
+
 #projects{
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 #good-food{
   background-image: url("/img/goodfood-main.png");
   background-size: contain;
@@ -308,28 +329,48 @@ ul li{
 }
 
 #email-btn{
-  padding: 20px;
+  padding: 10px 20px;
   margin: 10px;
   border-radius: 10px;
-  font-size: 50px;
+  font-size: 1rem;
   background-color: var(--emailbtnbg);
+  color: var(--emailbtncolor);
+  border: 2px solid var(--emailbtncolor);
+  transition: 0.5s;
 }
+
+#email-btn:hover{
+  cursor: pointer;
+  background-color: var(--emailbtnbghover);
+  color: var(--emailbtncolorhover);
+  border: 2px solid var(--emailbtncolorhover);
+  transition: 0.5s;
+}
+
 #contact-links{
   display: flex;
   justify-content: space-evenly;
   row-gap: 10%;
   width: 100%;
 }
-.link-format{
-  height: 50px;
-  width: 50px;
+#contact-links div{
+  transition: 0.5s;
 }
-#github{
+#contact-links div:hover{
+  transform: rotate(60deg);
+  transition: 0.5s;
+}
+
+.link-format{
+  height: 40px;
+  width: 40px;
+}
+.github{
   background-image: url('/img/github.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
-#linkedin{
+.linkedin{
   background-image: url('/img/linkedin.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -338,10 +379,9 @@ ul li{
 footer>p{
   text-align: center;
   font-size: 0.9rem;
-  margin: 15% 0 0 0;
 }
 footer{
-  margin: 0 0 5% 0;
+  margin: 0 0 6% 0;
 }
 
 @media only screen and (min-width: 350px){
@@ -357,13 +397,10 @@ footer{
   h2{
     font-size: 1.5rem;
   }
-
 }
-
 @media only screen and (min-width: 480px){
   main{
     width: 400px;
-
   }
   .content{
     width: 370px;
@@ -371,8 +408,8 @@ footer{
   h2{
     font-size: 1.7rem;
   }
-
 }
+
 @media only screen and (min-width: 600px){
   main{
     width: 500px;
@@ -389,9 +426,7 @@ footer{
     width: 650px;
   }
 }
-
 /* essentially converting this into a single page*/
-
 @media only screen and (min-width: 900px){
   *{
     overflow: hidden;
@@ -411,46 +446,140 @@ footer{
     flex-direction: column;
     align-items: center;
   }
-  #nav-links{
-    display: inline;
+  #nav-title{
+    cursor: pointer;
   }
+  #nav-links{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 0 3%;
+  }
+  #nav-links>a{
+    display: inline;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: var(--navbarlinks);
+    transition: 0.3s;
+  }
+
+  #nav-links>a:hover{
+    color: var(--navbarlinkshover);
+    transition: 0.5s;
+    font-style: italic;
+  }
+
   .menu-wrapper{
     display: none;
   }
-
   #left-side-links {
     display: block;
-}
+  }
+  #right-side-links {
+      display: block;
+  }
+  /*  content */
   
-#right-side-links {
-    display: block;
-}
-/*  content */
-#about{
-  display: none;
-}
+  .title1{
+    font-size: 6rem;
+    margin: 0 10px;
+  }
+  .title2{
+      font-size: 3rem;
+      margin: 0;
+  }
 
-#work-edu{
-  display: none;
-}
+  .title3{
+      font-size: 2rem;
+      margin: 90px 0 0 0;
+  }
 
-#projects{
-  display: none;
-}
+  .title4{
+      font-size: 2rem; 
+  }
+  h2{
+    font-size: 2rem;
+  }
 
-#contact{
-  display: none;
-}
+  #about{
+    display: none;
+    padding: 10% 0;
+  }
 
-footer{
-  position: absolute;
-  bottom: 0;
-  margin: 1% auto;
+  #work-edu{
+    display: none;
+    margin:0;
+    padding: 10% 0;
 
-}
+  }
+  #projects{
+    display: none;
+    padding: 10% 0;
 
-#contact-links{
-  display: none;
-}
-    
+  }
+  #contact{
+    display: none;
+    padding: 10% 0;
+
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    margin: 1% auto;
+  }
+  #contact-links{
+    display: none;
+  }
+  #left-side-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 3%;
+    height: 100vh;
+    width: 57px; 
+    /* width match nav title */
+  }
+
+  #left-side-links>div:nth-child(1){
+    height: 60px;
+    width: 57px;
+  }
+
+  #left-side-links>div:nth-child(2)>div{
+    margin: 30px 0;
+    height: 30px;
+    width: 30px;
+    transition: 0.5s;
+  }
+  #left-side-links>div:nth-child(3)>div{
+    margin: 30px 0;
+    height: 30px;
+    width: 30px;
+    transition: 0.5s;
+  }
+
+  #left-side-links>div:nth-child(2)>div:hover{
+    transform: rotate(60deg);
+    transition: 0.5s;
+
+  }
+  #left-side-links>div:nth-child(3)>div:hover{
+    transform: rotate(60deg);
+    transition: 0.5s;
+ 
+  }
+
+  #left-side-links>div:nth-child(4){
+    position: absolute;
+    bottom: 0;
+    height: 70%;
+    border: 1px solid black;
+    margin:0;
+    padding:0;
+  }
+
+  
 }

@@ -6,7 +6,7 @@ let count = 0
 
 const jobTabs = document.querySelector('.job-tabs')
 const allTabs = document.querySelectorAll('.tab')
-const contactLinks = document.querySelector('#contact-links')
+const contactLinks = document.querySelectorAll('.circle-links')
 const emailBtn = document.querySelector('#email-btn')
 
 const menuBtn = document.querySelector('.menu')
@@ -69,13 +69,16 @@ jobTabs.addEventListener("click", (event)=>{
 
 }})
 
-contactLinks.addEventListener("click", (event)=>{
-    if (event.target.id === 'github'){
-        window.open('https://github.com/vanessaycui/');
-    }
-    if (event.target.id === 'linkedin'){
-        window.open('https://www.linkedin.com/in/vanessa-cui-p-eng-9b763294/');
-    }
+contactLinks.forEach(link =>{
+    link.addEventListener("click", (event)=>{
+        if (event.target.classList[1] === 'github'){
+            window.open('https://github.com/vanessaycui/');
+        }
+        if (event.target.classList[1] === 'linkedin'){
+            window.open('https://www.linkedin.com/in/vanessa-cui-p-eng-9b763294/');
+        }
+        console.log(event.target.classList[1])  
+    })
 })
 
 emailBtn.addEventListener("click", (event)=>{
