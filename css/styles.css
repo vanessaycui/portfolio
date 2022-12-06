@@ -30,30 +30,38 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Arial;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   margin: 0;
 }
 
 .title1{
     font-size: 3.5rem;
     margin: 0 10px;
+    font-family: 'Playfair Display', serif;
 }
 .title2{
     font-size: 2rem;
     margin: 0;
+    font-family: 'Playfair Display', serif;
 }
 
 .title3{
     font-size: 1.5rem;
     margin: 90px 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 .title4{
     font-size: 1rem; 
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 h2{
   font-size: 1.3rem;
+  font-family: 'Playfair Display', serif;
 }
 
 .nav-bar-style{
@@ -142,6 +150,7 @@ h2{
   position: absolute;
   width: 0;
   height: 0;
+  
 
 }
 .menu ul{
@@ -164,7 +173,7 @@ h2{
   width: 100%;
   padding: 10px 10px;
   list-style-type: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 25px;
   text-align: right;
   text-transform: uppercase;
@@ -378,6 +387,7 @@ ul li{
 
 footer>p{
   text-align: center;
+  font-family: 'Playfair Display', serif;
   font-size: 0.9rem;
 }
 footer{
@@ -461,6 +471,7 @@ footer{
     text-decoration: none;
     color: var(--navbarlinks);
     transition: 0.3s;
+    font-family: 'Playfair Display', serif;
   }
 
   #nav-links>a:hover{
