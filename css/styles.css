@@ -107,11 +107,18 @@ h2{
 }
 
 #nav-title{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     text-align: center;
     width: 60px;
     margin: 0 0 0 3%;
     transition: 0.3s;
+}
+
+.logo-spin{
+    animation: rotateV 4s  both;
+}
+@keyframes rotateV {
+  100%{transform: rotate(270deg)}
 }
 
 #nav-title:hover{
