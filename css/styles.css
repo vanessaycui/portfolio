@@ -1,9 +1,10 @@
 :root {
+  --alloverbgcolor: whitesmoke;
   --navbarlinks: black;
   --navbarlinkshover: grey;
   --navbarlinkshoverbg:red;
   --navbarlinksactive: black;
-  --navbgcolor: rgba(255,255,255,0.8);
+  --navbgcolor: whitesmoke;
 
   --menubg: black;
   --menulinkbg: rgba(255,255,255,0.8);
@@ -36,13 +37,14 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   margin: 0;
+  background-color: var(--alloverbgcolor);
 }
 
 .title1{
     font-size: 3.5rem;
     margin: 0 10px;
-  
 }
+  
 .title2{
     font-size: 2rem;
     margin: 0;
@@ -52,7 +54,6 @@ body {
 .title3{
     font-size: 1.5rem;
     margin: 90px 0 0 0;
-
     font-weight: 400;
 }
 
@@ -102,11 +103,13 @@ h2{
     text-align: center;
     width: 60px;
     margin: 0 0 0 3%;
+    transition: 0.3s;
 }
 
 #nav-title:hover{
   color:var(--navbarlinkshover);
   font-style:italic;
+  transition: 0.3s;
 }
 
 /* hidden links for smaller screens */
@@ -195,7 +198,7 @@ h2{
   width: 100%;
   padding: 10px 10px;
   list-style-type: none;
-  font-size: 25px;
+  font-size: 1.5rem;
   text-align: right;
   text-transform: uppercase;
   transition: all 0.25s ease-in-out;
@@ -414,7 +417,7 @@ ul li{
 
 footer>p{
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 footer{
   margin: 0 0 6% 0;
@@ -492,7 +495,7 @@ footer{
 
   }
   main{
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -506,6 +509,8 @@ footer{
 
   #nav-title{
     cursor: pointer;
+    transform: scale(0);
+    animation: scale 1.5s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
   
   #nav-links{
@@ -519,18 +524,26 @@ footer{
   #nav-links>a:nth-child(2){
     position: absolute;
     right: 650px;
+    transform: scale(0.5);
+    animation: scale 0.5s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
   #nav-links>a:nth-child(3){
     position: absolute;
     right: 450px;
+    transform: scale(0.5);
+    animation: scale 1s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
   #nav-links>a:nth-child(4){
     position: absolute;
     right: 250px;
+    transform: scale(0.5);
+    animation: scale 1.5s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
   #nav-links>a:nth-child(5){
     position: absolute;
     right: 50px;
+    transform: scale(0.5);
+    animation: scale 2s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
 
   #nav-links>a:hover{
@@ -550,9 +563,20 @@ footer{
   /*  content */
   
   .title1{
-    font-size: 6rem;
+    font-size: 7rem;
     margin: 0 10px;
+    letter-spacing: -3px;
+    transform: scale(0.9);
+    animation: scale 1s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    transition: 700ms ease;
   }
+  .title1:hover {
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: cell;
+  }
+
+
   .title2{
       font-size: 3rem;
       margin: 0;
@@ -567,14 +591,13 @@ footer{
       font-size: 2rem; 
   }
   h2{
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #about{
     display: none;
     padding: 10% 0;
-    font-size: 1.5rem;
-  
+    font-size: 1.25rem;
   }
   #work-edu{
     display: none;
@@ -593,15 +616,16 @@ footer{
     width: 300px;
     height: 400px;
     background-color: var(--jobcardbgcolor);
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
   }
+
   .work-edu-content{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     gap:10px;
     height: 90%
   }
@@ -626,8 +650,9 @@ footer{
   #contact{
     display: none;
     padding: 10% 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
+
   #contact>button{
     display: block;
     margin: 0 auto;
@@ -666,12 +691,16 @@ footer{
   }
 
   #left-side-links>div:nth-child(2)>div{
-    
     transition: 0.5s;
+    transform: scale(0);
+    opacity:0;
+    animation: fadeInScale 1.2s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
   #left-side-links>div:nth-child(3)>div{
-
     transition: 0.5s;
+    transform: scale(0);
+    opacity:0;
+    animation: fadeInScale 0.8s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
 
   #left-side-links>div:nth-child(2)>div:hover{
@@ -692,8 +721,45 @@ footer{
     border: 1px solid black;
     margin:0;
     padding:0;
+    animation: shootUp 0.8s;
   }
 
+  /* adding animation */
 
+  .fade-in{
+    opacity:1;
+    animation: 1s fadeIn ;
+  }
+  
 }
+
+@media only screen and (min-width: 1000px){
+  main{
+    width: 60%;
+  }
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+@keyframes shootUp {
+  from { bottom: -900px; }
+  to { bottom: 0px; }
+}
+
+@keyframes fadeInScale {
+  0% { opacity: 0; }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 

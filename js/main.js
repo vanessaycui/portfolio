@@ -20,6 +20,10 @@ const entireWindow = document.querySelector('*')
 
 /*----- event listeners -----*/
 
+window.onscroll = function(event) {
+    console.log("scroll")
+};
+
 window.addEventListener('resize', function() {
     allNavLinks.forEach(link=>{
         if (link.id !==""){
@@ -82,7 +86,6 @@ contactLinks.forEach(link =>{
         if (event.target.classList[1] === 'linkedin'){
             window.open('https://www.linkedin.com/in/vanessa-cui-p-eng-9b763294/');
         }
-        console.log(event.target.classList[1])  
     })
 })
 
@@ -95,17 +98,17 @@ navLinks.addEventListener('click', (event)=>{
     
     allNavLinks.forEach(link=>{ 
         if (link.id !==""){
-            console.log('#'+link.id)
             document.querySelector('#'+link.id).classList.remove("nav-links-active")
         }
         document.querySelector(link.hash).style.display='none'
     })
 
     if (event.target.tagName ==='A'){
+        
         document.querySelector(event.target.hash).style.display='block'
+        document.querySelector(event.target.hash).classList.add("fade-in")       
     }
     document.querySelector('#'+event.target.id).classList.add("nav-links-active")
-
 })
 
 navTitle.addEventListener('click', (event)=>{
