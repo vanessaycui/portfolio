@@ -509,8 +509,6 @@ footer{
 
   #nav-title{
     cursor: pointer;
-    transform: scale(0);
-    animation: scale 1.5s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
   
   #nav-links{
@@ -690,28 +688,13 @@ footer{
 
   }
 
-  #left-side-links>div:nth-child(2)>div{
-    transition: 0.5s;
-    transform: scale(0);
-    opacity:0;
-    animation: fadeInScale 1.2s forwards cubic-bezier(0.5, 1, 0.89, 1);
-  }
-  #left-side-links>div:nth-child(3)>div{
-    transition: 0.5s;
-    transform: scale(0);
-    opacity:0;
-    animation: fadeInScale 0.8s forwards cubic-bezier(0.5, 1, 0.89, 1);
-  }
-
   #left-side-links>div:nth-child(2)>div:hover{
-    transform: rotate(60deg);
-    transition: 0.5s;
-
+    transform: rotate(360deg);
+    transition: 1s;
   }
   #left-side-links>div:nth-child(3)>div:hover{
-    transform: rotate(60deg);
-    transition: 0.5s;
- 
+    transform: rotate(360deg);
+    transition: 1s;
   }
 
   #left-side-links>div:nth-child(4){
