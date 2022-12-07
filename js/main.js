@@ -21,6 +21,11 @@ const entireWindow = document.querySelector('*')
 /*----- event listeners -----*/
 
 window.addEventListener('resize', function() {
+    allNavLinks.forEach(link=>{
+        if (link.id !==""){
+            document.querySelector('#'+link.id).classList.remove("nav-links-active")
+        }
+    })
     if (window.innerWidth < 900) {
         allNavLinks.forEach(link=>{
             document.querySelector(link.hash).style.display='flex'
@@ -87,13 +92,20 @@ emailBtn.addEventListener("click", (event)=>{
 })
 
 navLinks.addEventListener('click', (event)=>{
-    allNavLinks.forEach(link=>{
+    
+    allNavLinks.forEach(link=>{ 
+        if (link.id !==""){
+            console.log('#'+link.id)
+            document.querySelector('#'+link.id).classList.remove("nav-links-active")
+        }
         document.querySelector(link.hash).style.display='none'
     })
-    console.dir(event.target)
+
     if (event.target.tagName ==='A'){
-    document.querySelector(event.target.hash).style.display='flex'
+        document.querySelector(event.target.hash).style.display='block'
     }
+    document.querySelector('#'+event.target.id).classList.add("nav-links-active")
+
 })
 
 navTitle.addEventListener('click', (event)=>{

@@ -2,6 +2,7 @@
   --navbarlinks: black;
   --navbarlinkshover: grey;
   --navbarlinkshoverbg:red;
+  --navbarlinksactive: black;
   --navbgcolor: rgba(255,255,255,0.8);
 
   --menubg: black;
@@ -12,6 +13,8 @@
   --resumebtnhover: grey;
   --resumebtncolor: grey;
   --resumebtnhovercolor: orange;
+
+  --jobcardbgcolor: pink;
 
   --tabinactive: grey;
   --tabactive: pink;
@@ -30,38 +33,38 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   margin: 0;
 }
 
 .title1{
     font-size: 3.5rem;
     margin: 0 10px;
-    font-family: 'Playfair Display', serif;
+  
 }
 .title2{
     font-size: 2rem;
     margin: 0;
-    font-family: 'Playfair Display', serif;
+
 }
 
 .title3{
     font-size: 1.5rem;
     margin: 90px 0 0 0;
-    font-family: 'Open Sans', sans-serif;
+
     font-weight: 400;
 }
 
 .title4{
     font-size: 1rem; 
-    font-family: 'Open Sans', sans-serif;
+
     font-weight: 400;
 }
 
 h2{
   font-size: 1.3rem;
-  font-family: 'Playfair Display', serif;
+ 
 }
 
 .nav-bar-style{
@@ -80,11 +83,32 @@ h2{
   display: none;
 }
 
+.nav-links-normal{
+  display: inline;
+  padding: 5px 20px;
+  text-decoration: none;
+  color: var(--navbarlinks);
+}
+
+.nav-links-active{
+  font-style: italic;
+  font-weight: 400;
+  color: var(--navbarlinksactive);
+
+}
+
 #nav-title{
+    font-size: 1.5rem;
     text-align: center;
     width: 60px;
     margin: 0 0 0 3%;
 }
+
+#nav-title:hover{
+  color:var(--navbarlinkshover);
+  font-style:italic;
+}
+
 /* hidden links for smaller screens */
 .menu-wrapper {
   margin: 0 5%;
@@ -150,8 +174,6 @@ h2{
   position: absolute;
   width: 0;
   height: 0;
-  
-
 }
 .menu ul{
   position: absolute;
@@ -173,7 +195,6 @@ h2{
   width: 100%;
   padding: 10px 10px;
   list-style-type: none;
-  font-family: 'Playfair Display', serif;
   font-size: 25px;
   text-align: right;
   text-transform: uppercase;
@@ -233,6 +254,8 @@ main{
 }
 
 .container{
+  display: flex;
+  justify-content: center;
   width: 250px;
   height:75px;
 }
@@ -292,21 +315,23 @@ ul li{
   gap: 10px;
 }
 
+.project-card{
+  height: 200px;
+  width: 250px;
+}
+
 #good-food{
   background-image: url("/img/goodfood-main.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-color: #5D9594;
-  height: 200px;
-  width: 250px;
+ 
 }
 #snake{
   background-image: url("/img/snake-game.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-color: #222931;
-  height: 200px;
-  width: 250px;
 }
 .proj-content{
   position: relative;
@@ -362,9 +387,11 @@ ul li{
   row-gap: 10%;
   width: 100%;
 }
+
 #contact-links div{
   transition: 0.5s;
 }
+
 #contact-links div:hover{
   transform: rotate(60deg);
   transition: 0.5s;
@@ -387,7 +414,6 @@ ul li{
 
 footer>p{
   text-align: center;
-  font-family: 'Playfair Display', serif;
   font-size: 0.9rem;
 }
 footer{
@@ -418,6 +444,9 @@ footer{
   h2{
     font-size: 1.7rem;
   }
+  .container{
+    width: 400px;
+  }
 }
 
 @media only screen and (min-width: 600px){
@@ -427,6 +456,13 @@ footer{
   .content{
     width: 500px;
   }
+  .container{
+    width: 500px;
+  }
+  .project-card{
+    height: 200px;
+    width: 250px;
+  }
 }
 @media only screen and (min-width: 768px){
   main{
@@ -434,6 +470,13 @@ footer{
   }
   .content{
     width: 650px;
+  }
+  .container{
+    width: 750px;
+  }
+  .project-card{
+    height: 300px;
+    width: 350px;
   }
 }
 /* essentially converting this into a single page*/
@@ -446,8 +489,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Arial;
-    height: 100vh;
+
   }
   main{
     width: 70%;
@@ -455,28 +497,44 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height:100vh;
   }
+
+  .nav-bar-style{
+    height: 90px;
+  }
+
   #nav-title{
     cursor: pointer;
   }
+  
   #nav-links{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     width: 90%;
     margin: 0 3%;
   }
-  #nav-links>a{
-    display: inline;
-    padding: 5px 20px;
-    text-decoration: none;
-    color: var(--navbarlinks);
-    transition: 0.3s;
-    font-family: 'Playfair Display', serif;
+
+  #nav-links>a:nth-child(2){
+    position: absolute;
+    right: 650px;
+  }
+  #nav-links>a:nth-child(3){
+    position: absolute;
+    right: 450px;
+  }
+  #nav-links>a:nth-child(4){
+    position: absolute;
+    right: 250px;
+  }
+  #nav-links>a:nth-child(5){
+    position: absolute;
+    right: 50px;
   }
 
   #nav-links>a:hover{
     color: var(--navbarlinkshover);
-    transition: 0.5s;
     font-style: italic;
   }
 
@@ -509,29 +567,70 @@ footer{
       font-size: 2rem; 
   }
   h2{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   #about{
     display: none;
     padding: 10% 0;
+    font-size: 1.5rem;
+  
   }
-
   #work-edu{
     display: none;
-    margin:0;
     padding: 10% 0;
-
+  }
+  .container{
+    display:none;
+  }
+  .work-edu-hide{
+    visibility: visible;
+    opacity: 1;
+  }
+  .content{
+    display:block;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: var(--jobcardbgcolor);
+    padding: 30px;
+    border-radius: 20px;
+  }
+  .work-edu-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:10px;
+    height: 90%
+  }
+  #edu{
+    margin: 0;
   }
   #projects{
     display: none;
     padding: 10% 0;
+  }
+  .project-card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
+  .project-card{
+    height: 400px;
+    width: 450px;
   }
   #contact{
     display: none;
     padding: 10% 0;
-
+    font-size: 1.5rem;
+  }
+  #contact>button{
+    display: block;
+    margin: 0 auto;
   }
   footer{
     position: absolute;
@@ -555,20 +654,23 @@ footer{
   }
 
   #left-side-links>div:nth-child(1){
-    height: 60px;
+    height: 90px;
     width: 57px;
   }
 
-  #left-side-links>div:nth-child(2)>div{
+  .left-side-links{
     margin: 30px 0;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+
+  }
+
+  #left-side-links>div:nth-child(2)>div{
+    
     transition: 0.5s;
   }
   #left-side-links>div:nth-child(3)>div{
-    margin: 30px 0;
-    height: 30px;
-    width: 30px;
+
     transition: 0.5s;
   }
 
@@ -586,11 +688,12 @@ footer{
   #left-side-links>div:nth-child(4){
     position: absolute;
     bottom: 0;
-    height: 70%;
+    height: 75%;
     border: 1px solid black;
     margin:0;
     padding:0;
   }
 
-  
+
 }
+

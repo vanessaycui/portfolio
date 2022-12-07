@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <style> @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Vanessa Cui</title>
 </head>
@@ -17,10 +16,10 @@
         </div>
         <div id="nav-links">
             <a href="#intro" style='display:none'>MAIN</a>
-            <a id="about-link" href="#about">01. ABOUT ME</a>
-            <a id="proj-link" href="#projects"> 02. PROJECTS</a>
-            <a id="work-edu-link" href="#work-edu"> 03. WORK & EDU</a>
-            <a id="contact-link" href="#contact"> 04. GET IN TOUCH</a>
+            <a id="about-link" href="#about" class="nav-links-normal">01. ABOUT ME</a>
+            <a id="proj-link" href="#projects" class="nav-links-normal"> 02. PROJECTS</a>
+            <a id="work-edu-link" href="#work-edu" class="nav-links-normal"> 03. EXPERIENCE</a>
+            <a id="contact-link" href="#contact" class="nav-links-normal"> 04. GET IN TOUCH</a>
             <!-- <a id="resume-btn"href="#"> Resume</a> -->
         </div>            
         <div class="menu-wrapper">
@@ -28,7 +27,7 @@
                 <ul class="menu-links">
                     <li><a href="#intro">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#work-edu">Work & Education</a></li>
+                    <li><a href="#work-edu">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -37,17 +36,12 @@
     </nav>
     <aside id="left-side-links">
         <div></div>
-     
         <div>
-            <div class="link-format github circle-links"></div>
-            
-
+            <div class="link-format github circle-links left-side-links"></div>
         </div>
         <div>
-            <div class="link-format linkedin circle-links"></div>
-        </div>
-        
-        
+            <div class="link-format linkedin circle-links left-side-links"></div>
+        </div>        
         <div></div>
 
         
@@ -61,7 +55,7 @@
         </section>
         
         <section id="about" class="center-align">
-            <h2>01. ABOUT ME</h2>
+            <h2 style="text-align: center">01. ABOUT ME</h2>
             <div class="about-content" >
                 <p> Hello! My name is Vanessa and I’m a Software Developer with a professional background in engineering.</p>
                 <p> I have a passion for designing and building full-stack applications with the potential to positively impact society on a global-scale. With my engineering background, I am adept at critical thinking, problem solving, and finding creative solutions to challenging technical problems. My previous experience in consulting has allowed me to hone my ability to effectively work in a multidisciplinary team of engineers to solve complex problems. 
@@ -74,83 +68,86 @@
         </section>
         
         <section id="work-edu" class="center-align">
-            <h2>02. WORK & EDUCATION</h2>
-            <div class="container">
-                <div class="work-edu-side-nav job-tabs">
-                    <a id="job-one" class ="tab tab-1 active"> Jacobs </a>
-                    <a id="job-two" class="tab tab-2"> RJC </a>
-                    <a id="job-three" class="tab tab-3"> SGH </a>
-                    <a id="edu-edu" class="tab tab-4"> Education </a>
-                    <span class="highlighter"></span>  
-                </div>
-            </div>
-            <section id="work-section" class="work-edu-section">
-                
-                <div id="work-content"  class="work-edu-content center-align">
-                    <div id="one" class ="content">
-                        <h3>Structural Engineer @ Jacobs</h3>
-                        <p>May 2021 - May 2022</p>
-                        <ul>
-                            <li>Coordinated technical design work within a multidisciplinary team of engineers</li>
-                            <li>Prepared technical memorandums to succinctly convey structural recommendations to clients</li>
-                            <li>Assisted in the preparation of structural drawings and calculations</li>
-                            <li>Analyzed and designed structures in accordance with the Ontario Building Code</li>
-                        </ul>
-                    </div>
-                    <div id="two" class="work-edu-hide content">
-                        <h3>Structural Restoration EIT @ RJC Engineers</h3>
-                        <p>April 2019 - May 2021</p>
-                        <ul>
-                            <li>Assisted in managing projects and clients from conceptual design to final completion</li>
-                            <li>Liaising with clients/stakeholders, contractors, subconsultants during all phases of a project</li>
-                            <li>Prepared reports, studies, structural drawings and specifications</li>
-                            <li>Designed and analyzed existing building components, upgrades, and additions</li>
-                        </ul>
-                    </div>
-                    <div id="three"  class="work-edu-hide content">
-                        <h3>Staff I @ Simpson Gumpertz & Heger</h3>
-                        <p>April 2016 - November 2017</p>
-                        <ul>
-                            <li>Performed construction administration activities to ensure general conformance to project design drawings and specification</li>
-                        </ul>
-                      
-        
-                    </div>
-                    <div id="edu" class="work-edu-hide content">
-                        <p><strong>Software Engineering</strong></p>
-                        <p>@ General Assembly '23</p>
-                        <br>
-                        <p><strong>Master of Engineering</strong></p>
-                        <p>Civil Engineering</p>
-                        <p>@ University of Toronto '19</p>
-                        <br>
-                        <p><strong>Bachelor of Applied Science</strong></p>
-                        <p>Civil Engineering</p>
-                        <p>@ University of Waterloo '16</p>
+            <h2 style="text-align: center">02. EXPERIENCE</h2>
+       
+                <div class="container">
+                    <div class="work-edu-side-nav job-tabs">
+                        <a id="job-one" class ="tab tab-1 active"> Jacobs </a>
+                        <a id="job-two" class="tab tab-2"> RJC </a>
+                        <a id="job-three" class="tab tab-3"> SGH </a>
+                        <a id="edu-edu" class="tab tab-4"> Education </a>
+                        <span class="highlighter"></span>  
                     </div>
                 </div>
-            </section>
+                <section id="work-section" >
+                    <div class="work-edu-content center-align">
+                        <div id="one" class ="content">
+                            <h3>Structural Engineer @ Jacobs</h3>
+                            <p>May 2021 - May 2022</p>
+                            <ul>
+                                <li>Coordinated technical design work within a multidisciplinary team of engineers</li>
+                                <li>Prepared technical memorandums to succinctly convey structural recommendations to clients</li>
+                                <li>Assisted in the preparation of structural drawings and calculations</li>
+                                <li>Analyzed and designed structures in accordance with the Ontario Building Code</li>
+                            </ul>
+                        </div>
+                        <div id="two" class="work-edu-hide content">
+                            <h3>Structural Restoration EIT @ RJC Engineers</h3>
+                            <p>April 2019 - May 2021</p>
+                            <ul>
+                                <li>Assisted in managing projects and clients from conceptual design to final completion</li>
+                                <li>Liaising with clients/stakeholders, contractors, subconsultants during all phases of a project</li>
+                                <li>Prepared reports, studies, structural drawings and specifications</li>
+                                <li>Designed and analyzed existing building components, upgrades, and additions</li>
+                            </ul>
+                        </div>
+                        <div id="three"  class="work-edu-hide content">
+                            <h3>Staff I @ Simpson Gumpertz & Heger</h3>
+                            <p>April 2016 - November 2017</p>
+                            <ul>
+                                <li>Performed construction administration activities to ensure general conformance to project design drawings and specification</li>
+                            </ul>
+                        
+            
+                        </div>
+                        <div id="edu" class="work-edu-hide content">
+                            <p><strong>Software Engineering</strong></p>
+                            <p>@ General Assembly '23</p>
+                            <br>
+                            <p><strong>Master of Engineering</strong></p>
+                            <p>Civil Engineering</p>
+                            <p>@ University of Toronto '19</p>
+                            <br>
+                            <p><strong>Bachelor of Applied Science</strong></p>
+                            <p>Civil Engineering</p>
+                            <p>@ University of Waterloo '16</p>
+                        </div>
+                    </div>
+                </section>
+    
 
         </section>
         
         <section id="projects" class="center-align">
-            <h2>03. PROJECTS</h2>
-            <div id="good-food" class="image-border">
-                <div class="proj-content">
-                    <h1>Good Food</h1>
+            <h2 style="text-align: center">03. PROJECTS</h2>
+            <div class="project-card-container">
+                <div id="good-food" class="image-border project-card">
+                    <div class="proj-content">
+                        <h1>Good Food</h1>
 
+                    </div>
                 </div>
-            </div>
-            <div id="snake" class="image-border">
-                <div class="proj-content">
-                    <h1>Snake</h1>
+                <div id="snake" class="image-border project-card">
+                    <div class="proj-content">
+                        <h1>Snake</h1>
 
+                    </div>
                 </div>
             </div>
         </section>
         
         <section id="contact" class="center-align">
-            <h2>04. GET IN TOUCH</h2>
+            <h2 style="text-align: center">04. GET IN TOUCH</h2>
             <p>I'm currently seeking opportunities to join an awesome team. </p>
             <p>I would still love to hear from you if you just want to connect!</p>          
             <button id="email-btn">email</button>
