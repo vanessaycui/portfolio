@@ -375,18 +375,7 @@ ul li{
     width: 200px;
     transition: opacity 0.5s linear;
 }
-#one{
-  animation: upstuff 3s;
-}
-#two{
-  animation: upstuff 3.5s;
-}
-#three{
-  animation: upstuff 4s;
-}
-#edu{
-  animation: upstuff 4.5s;
-}
+
 #projects{
   display: flex;
   flex-direction: column;
@@ -760,6 +749,18 @@ footer{
   .work-edu-hide{
     visibility: visible;
     opacity: 1;
+  }
+  #one{
+    animation: upstuff 3s;
+  }
+  #two{
+    animation: upstuff 3.5s;
+  }
+  #three{
+    animation: upstuff 4s;
+  }
+  #edu{
+    animation: upstuff 4.5s;
   }
   .content{
     display:block;
