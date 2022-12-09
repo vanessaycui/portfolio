@@ -21,6 +21,7 @@
   --resumebtnhovercolor: orange;
 
   --jobcardbgcolor: pink;
+  --jobcardbgcolorhover: rgb(250, 227, 231);
 
   --tabinactive: grey;
   --tabactive: pink;
@@ -802,6 +803,12 @@ footer{
     background-color: var(--jobcardbgcolor);
     padding: 15px;
     border-radius: 20px;
+    transition: 0.3s;
+  }
+  .content:hover{
+    background-color: var(--jobcardbgcolorhover);
+    cursor:cell;
+    transition: 0.3s;
   }
 
   .work-edu-content{
