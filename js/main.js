@@ -15,7 +15,7 @@ const menuLinks = document.querySelector('.menu ul')
 
 const navLinks = document.querySelector('#nav-links')
 const allNavLinks = document.querySelectorAll('#nav-links>a')
-const navTitle = document.querySelector('#nav-title>h1')
+const navTitle = document.querySelector('#nav-title>div>h1')
 const entireWindow = document.querySelector('*')
 
 /*----- event listeners -----*/

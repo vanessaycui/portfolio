@@ -56,7 +56,7 @@
             <svg >
                 <text x="0px" y="80%"  text-anchor="left"> Vanessa Cui</text>
             </svg>
-            <h2 class="title2"> I like to design & build things</h2>
+            <h2 class="title2"> I like to design & build </h2>
             <h4 class="title4"> I'm a software developer and a licensed engineer based in Toronto, Ontario, Canada</h4>
         </section>
         
@@ -68,15 +68,28 @@
                   </div>
                 </div>
             </div>
-            <div class="about-content image" >
-                <p> Hello! My name is Vanessa and I’m a Software Developer with a professional background in engineering.</p>
-                <p> I have a passion for designing and building full-stack applications with the potential to positively impact society on a global-scale. With my engineering background, I am adept at critical thinking, problem solving, and finding creative solutions to challenging technical problems. My previous experience in consulting has allowed me to hone my ability to effectively work in a multidisciplinary team of engineers to solve complex problems. 
-
-                            I love learning about new technologies and working on personal projects during my free time. I'm always curious about how things work and I will always try to find ways to make it better!</p>
-                <h4>A few technologies I've been working with lately:</h4>
-                <p> JavaScript, React, Node.js, Express</p>
+            <div class="about-content" >
+                <div id="left-about-container">
+                    <p> 
+                    Hello! My name is Vanessa and I’m a Software Developer with a professional background in engineering.
+                    I have a passion for designing and building full-stack applications with the potential to positively impact society on a global-scale.
+                    With my engineering background, I am adept at critical thinking, problem solving, and finding creative solutions to challenging technical problems.
+                    My previous experience in consulting has allowed me to hone my ability to effectively work in a multidisciplinary team of engineers to solve complex problems. 
+                    I love learning about new technologies and working on personal projects during my free time. 
+                    I'm always curious about how things work and I will always try to find ways to make it better!
+                    </p> 
+                    <br>
+                    <h4>A few technologies I've been working with lately:</h4>
+                    <p> JavaScript,  Node.js, Express, MongoDB</p>
+                </div>
+                <div id="right-about-container">
+                    <div id="bio-img-bg" class="image-border" ></div>
+                    <img id="bio-img" class="image-border"src="./img/vanessa3.jpg">
+                </div>
+    
             </div>
-            <img id="bio-img" class="image-border" src="./img/vanessa3.jpg">
+            
+            
         </section>
         
         <section id="work-edu" class="center-align">
@@ -154,7 +167,7 @@
                 </div>
             </div>
             <div class="project-card-container">
-                <div id="good-food" class="image-border project-card">
+                <div id="good-food" class="image-border project-card goodfood">
                     <div class="proj-content">
                         <h1>Good Food</h1>
 
@@ -177,9 +190,11 @@
                     </div>
                 </div>
             </div>
-            <p>I'm currently seeking opportunities to join an awesome team. </p>
-            <p>I would still love to hear from you if you just want to connect!</p>          
-            <button id="email-btn">email</button>
+            <div id="contact-content">
+                <p>I'm currently seeking opportunities to join an awesome team. </p>
+                <p>I would still love to hear from you if you just want to connect!</p>          
+                <button id="email-btn">email</button>
+            </div>
             
         </section>
 

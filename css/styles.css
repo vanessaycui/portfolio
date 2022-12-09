@@ -10,6 +10,8 @@
   --menulinkbg: rgba(255,255,255,0.8);
   --menulinkcolor: black;
 
+  --bio-container-img-bg: pink;
+
   --resumebtnbg: orange;
   --resumebtnhover: grey;
   --resumebtncolor: grey;
@@ -20,8 +22,8 @@
   --tabinactive: grey;
   --tabactive: pink;
 
-  --projcontentbg: rgba(255,255,255,0.5);
-  --projectcontentcolor: white;
+  --projcontentbg: rgba(255,255,255,0.9);
+  --projectcontentcolor: black;
 
   --emailbtnbg: white;
   --emailbtncolor:blue;
@@ -49,9 +51,10 @@ svg text {
   font-size: 3rem;
   font-weight: 700;
   stroke-width: 2;
-  animation: textAnimate 2s linear ;
-  
+  animation: textAnimate 3s infinite alternate;
  }
+
+
 .title2{
     font-size: 2rem;
     margin: 0;
@@ -111,11 +114,11 @@ h2{
     text-align: center;
     width: 60px;
     margin: 0 0 0 3%;
-    transition: 0.3s;
+    transition: 1s;
 }
 
 .logo-spin{
-    animation: rotateV 4s  both;
+    animation: rotateV 2.5s  both;
 }
 @keyframes rotateV {
   100%{transform: rotate(270deg)}
@@ -124,7 +127,8 @@ h2{
 #nav-title:hover{
   color:var(--navbarlinkshover);
   font-style:italic;
-  transition: 0.3s;
+  transform: rotate(90deg);
+  transition: 1s;
 }
 
 /* hidden links for smaller screens */
@@ -249,7 +253,7 @@ main{
 }
 .title {
   font-family: "Prata", serif;
-  font-size: 4rem;
+  font-size: 3rem;
   z-index: 2;
   width: 250px;
   text-align: center;
@@ -285,8 +289,33 @@ main{
 }
 
 #bio-img {
+  position: relative;
+  top: -160px;
   width: 150px;
+  z-index: 3;
+  opacity: 0.7;
+  border: 2px solid black;
+
 }
+
+#bio-img-bg{
+  position: relative;
+  left: 25px;
+  top: 60px;
+  width: 150px;
+  height: 200px;
+  background-color: var(--bio-container-img-bg);
+  z-index: 1;
+
+}
+
+#right-about-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 #work-edu{
   padding-top: 80px;
 }
@@ -346,7 +375,18 @@ ul li{
     width: 200px;
     transition: opacity 0.5s linear;
 }
-
+#one{
+  animation: upstuff 3s;
+}
+#two{
+  animation: upstuff 3.5s;
+}
+#three{
+  animation: upstuff 4s;
+}
+#edu{
+  animation: upstuff 4.5s;
+}
 #projects{
   display: flex;
   flex-direction: column;
@@ -356,31 +396,39 @@ ul li{
 .project-card{
   height: 200px;
   width: 250px;
+  margin: 5%;
 }
 
 #good-food{
-  background-image: url("/img/goodfood-main.png");
-  background-size: contain;
+  background-image: url("https://media.giphy.com/media/GUnfYM1mNcfWVOLhOZ/giphy.gif");
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #5D9594;
  
 }
 #snake{
-  background-image: url("/img/snake-game.png");
-  background-size: contain;
+  background-image: url("https://media.giphy.com/media/EW49lIkXwWFIBruEZE/giphy.gif");
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #222931;
 }
 .proj-content{
-  position: relative;
-  top: 0px;
-  left: 0px;
-  width: 230px;
-  height: 180px;
-  padding: 10px;
-  border-radius: 10px;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--projcontentbg);*/
+  color: transparent;
+  opacity: 0.5;
+  transition: 1s ease;
+}
+.proj-content:hover{
   background-color: var(--projcontentbg);
-  color: var(--projectcontentcolor)
+  color: var(--projectcontentcolor);
+  opacity: 1;
+  transition: 1s ease;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 .image-border{
   border-radius: 10px;
@@ -544,6 +592,7 @@ footer{
     letter-spacing: 5px;
     font-size: 7rem;    
    }
+   
 }
 /* essentially converting this into a single page*/
 @media only screen and (min-width: 900px){
@@ -629,9 +678,10 @@ footer{
     letter-spacing: 6px;
     font-size: 7.6rem;   
     height:100px; 
-   }
-
-
+  }
+  .title{
+    height: 110px;
+  }
   .title2{
       font-size: 3rem;
       margin: 0;
@@ -652,7 +702,53 @@ footer{
   #about{
     display: none;
     padding: 10% 0;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    height: 100vh;
+    margin: 0;
+  }
+  #bio-img {
+    position: relative;
+    top: -250px;
+    width: 200px;
+    z-index: 3;
+    opacity: 0.7;
+    border: 2px solid black;
+    animation: shootUpBioImg 1s linear;
+  }
+  @keyframes shootUpBioImg {
+    from { top: 0;}
+    to { top: -250px;}
+  }
+  #bio-img-bg{
+    position: relative;
+    left: 30px;
+    top: 35px;
+    width: 200px;
+    height: 260px;
+    background-color: var(--bio-container-img-bg);
+    z-index: 1;
+    animation: shootUpBioImgBg 1s linear;
+  }
+  @keyframes shootUpBioImgBg {
+    from { top: -500px;}
+    to { top: 35px;}
+  }
+
+  .about-content{
+    display:flex;
+    flex-direction: row;
+    flex: wrap;
+  }
+  #left-about-container{
+    width: 60%;
+    padding: 2%;
+  }
+  #right-about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40%;
   }
   #work-edu{
     display: none;
@@ -668,10 +764,10 @@ footer{
   .content{
     display:block;
     position: relative;
-    width: 300px;
-    height: 400px;
+    width: 260px;
+    height: 350px;
     background-color: var(--jobcardbgcolor);
-    padding: 20px;
+    padding: 15px;
     border-radius: 20px;
   }
 
@@ -682,7 +778,8 @@ footer{
     justify-content: center;
     align-items: center;
     gap:10px;
-    height: 90%
+    height: 90%;
+
   }
   #edu{
     margin: 0;
@@ -695,19 +792,36 @@ footer{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
   }
 
   .project-card{
-    height: 400px;
-    width: 450px;
+    height: 350px;
+    width: 400px;
+    margin: 0px;
   }
+
+  #good-food{
+    position: relative;
+    bottom:0px;
+    animation: upstuff 2s;
+  }
+
+  #snake{
+    position: relative;
+    bottom:0px;
+    animation: upstuff 3s ;
+  }
+  
   #contact{
     display: none;
     padding: 10% 0;
     font-size: 1.25rem;
   }
-
+  #contact-content{
+    position: relative;
+    animation: upstuff 1s;
+  }
   #contact>button{
     display: block;
     margin: 0 auto;
@@ -742,8 +856,6 @@ footer{
     margin: 30px 0;
     height: 40px;
     width: 40px;
-
-
   }
 
   #left-side-links>div:nth-child(2)>div:hover{
@@ -758,7 +870,7 @@ footer{
   #left-side-links>div:nth-child(4){
     position: absolute;
     bottom: 0;
-    height: 75%;
+    height: 65%;
     border: 1px solid black;
     margin:0;
     padding:0;
@@ -773,24 +885,24 @@ footer{
   }
   .title {
     font-family: "Prata", serif;
-    font-size: 6rem;
-    
+    padding-left: 2%;
+    font-size: 5rem;
     text-align: left;
     z-index: 2;
     width: 700px;
-    animation: outer-left 0.5s 0.5s ease both;
+    animation: outer-left 0.7s 0.7s ease both;
   }
   .section{
-    animation: outer-left 0.5s 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
+    animation: outer-left 0.7s 0.7s cubic-bezier(0.5, 0, 0.1, 1) both;
   }
   .title-inner {
     display: inline block;
     padding: 0 12% 0 0%;
-    animation: inner-left 0.5s 0.5s ease both;
+    animation: inner-left 0.7s 0.7s ease both;
   }
   .section-inner {
     display: inline-block;
-    animation: inner-left 0.5s 0.5s ease both, text-clip 0.5s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+    animation: inner-left 0.7s 0.7s ease both, text-clip 0.5s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
   }
   @keyframes text-clip {
     from {
@@ -822,12 +934,40 @@ footer{
 
 @media only screen and (min-width: 1000px){
   main{
-    width: 70%;
+    max-width: 1500px;
   }
 
   .title-inner {
     padding: 0 15% 0 0%;
 
+  }
+
+  #bio-img {
+    position: relative;
+    top: -340px;
+    width: 250px;
+    z-index: 3;
+    opacity: 0.7;
+    border: 2px solid black;
+    animation: shootUpBioImg 1s linear;
+  }
+  @keyframes shootUpBioImg {
+    from { top: 0;}
+    to { top: -340px;}
+  }
+  #bio-img-bg{
+    position: relative;
+    left: 30px;
+    top: 35px;
+    width: 260px;
+    height: 350px;
+    background-color: var(--bio-container-img-bg);
+    z-index: 1;
+    animation: shootUpBioImgBg 1s linear;
+  }
+  @keyframes shootUpBioImgBg {
+    from { top: -500px;}
+    to { top: 35px;}
   }
   @keyframes text-clip {
     from {
@@ -853,7 +993,6 @@ footer{
       transform: none;
    }
   }
-  
 }
 
 @keyframes scale {
@@ -870,8 +1009,10 @@ footer{
   from { bottom: -900px; }
   to { bottom: 0px; }
 }
-
-
+@keyframes upstuff {
+  from { bottom: -1000px;}
+  to { bottom: 0px;}
+}
 
 @keyframes fadeInScale {
   0% { opacity: 0; }
@@ -881,36 +1022,12 @@ footer{
   }
 }
 
- 
-  
-.image {
-  opacity: 0.7;
-  animation: image-in 0.5s cubic-bezier(0.5, 0, 0.1, 1) 1s backwards;
-}
-@keyframes image-in {
-  from {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
- }
-  to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
- }
-}
-.image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-
-
-
 
 @keyframes textAnimate {
  0% {
    stroke-dasharray: 0 50%;
    stroke-dashoffset:  20%;
-   fill:hsl(200, 60%, 60%)
-
+   fill:hsl(168, 35%, 36%)
  }
  
  100% {
