@@ -288,7 +288,6 @@ main{
   animation: none;
 }
 
-
 #intro{
   display: flex;
   flex-direction: column;
@@ -615,12 +614,11 @@ footer{
 
   }
   main{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:100vh;
   }
 
   .nav-bar-style{
@@ -707,13 +705,14 @@ footer{
     font-size: 2rem;
   }
 
+
   #about{
-    /* display: none; */
     padding: 10% 0;
     font-size: 1.1rem;
-    height: 100vh;
     margin: 0;
+    height: 100vh;
   }
+
   #bio-img {
     position: relative;
     right:0;
@@ -749,8 +748,8 @@ footer{
     width: 40%;
   }
   #work-edu{
-    /* display: none; */
     padding: 10% 0;
+    height: 100vh;
   }
  
   .container{
@@ -791,9 +790,8 @@ footer{
     margin: 0;
   }
   #projects{
-
     padding: 10% 0;
-
+    height: 100vh;
   }
   .project-card-container{
     display: flex;
@@ -809,9 +807,9 @@ footer{
   }
   
   #contact{
-
     padding: 10% 0;
     font-size: 1.25rem;
+    height: 100vh;
   }
 
   #contact-content{
@@ -824,7 +822,6 @@ footer{
   }
   footer{
     padding-bottom: 1%;
-  
     bottom:0;
     width: 100%;
     margin: 0;
@@ -889,19 +886,30 @@ footer{
     text-align: left;
     z-index: 2;
     width: 700px;
+    
+  }
+
+  .anime-outer-left{
     animation: outer-left 0.7s 0.7s ease both;
   }
-  .section{
+  .anime-inner-left{
+    animation: inner-left 0.7s 0.7s ease both;
+  }
+
+  .anime-section-outer-left{
     animation: outer-left 0.7s 0.7s cubic-bezier(0.5, 0, 0.1, 1) both;
   }
+  .anime-section-inner-left{
+    animation: inner-left 0.7s 0.7s ease both, text-clip 0.5s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  }
+
   .title-inner {
     display: inline block;
     padding: 0 12% 0 0%;
-    animation: inner-left 0.7s 0.7s ease both;
+    
   }
   .section-inner {
     display: inline-block;
-    animation: inner-left 0.7s 0.7s ease both, text-clip 0.5s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
   }
   @keyframes text-clip {
     from {

@@ -22,18 +22,20 @@ const entireWindow = document.querySelector('*')
 const bioImages = document.querySelector('#right-about-container')
 const experienceImages = document.querySelector('.work-edu-content')
 const projectImages = document.querySelector('.project-card-container')
+const contactImages = document.querySelector('#contact')
 
 /*----- init execution of functions-----*/
 removeBioRumble()
 removeExpRumble()
 removeProjRumble()
+removeTitleAnime('#about')
 /*----- event listeners / observers -----*/
 
 //this keeps track of what is in view, triggering animations.
 const observerBio = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
-            console.log('bio')
+            addTitleAnime('#about')
             bioImages.childNodes.forEach((child) =>{
                 if (child.id ==="bio-img-bg"){
                     child.classList.add("rumble-1")
@@ -42,6 +44,9 @@ const observerBio = new IntersectionObserver(entries =>{
                 }
             })
         }
+        setTimeout(()=>{
+            removeTitleAnime('#about')
+        }, 2000)
         setTimeout(removeBioRumble, 1900) // need to match duration of full animation
     })
 })
@@ -50,7 +55,7 @@ const observerBio = new IntersectionObserver(entries =>{
 const observerWork = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
-            console.log('work')
+            addTitleAnime('#work-edu')
             experienceImages.childNodes.forEach((child) =>{
                 if (child.id ==="one"){
                     child.classList.add("rumble-1")
@@ -63,6 +68,9 @@ const observerWork = new IntersectionObserver(entries =>{
                 }
             })
         }
+        setTimeout(()=>{
+            removeTitleAnime('#work-edu')
+        }, 2000)
         setTimeout(removeExpRumble, 1700)// need to match duration of full animation
     })
 })
@@ -70,7 +78,7 @@ const observerWork = new IntersectionObserver(entries =>{
 const observerProj = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
-            console.log('proj')
+            addTitleAnime('#projects')
             projectImages.childNodes.forEach((child) =>{
                 if (child.id ==="good-food"){
                     child.classList.add("rumble-1")
@@ -80,15 +88,28 @@ const observerProj = new IntersectionObserver(entries =>{
                 }
             })
         }
+        setTimeout(()=>{
+            removeTitleAnime('#projects')
+        }, 2000)
         setTimeout(removeProjRumble, 1900) 
     })
 })
 
-
+const observerContact = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            addTitleAnime('#contact')
+        }
+        setTimeout(()=>{
+            removeTitleAnime('#contact')
+        }, 2000)
+    })
+})
 
 observerWork.observe(experienceImages)
 observerBio.observe(bioImages)
 observerProj.observe(projectImages)
+observerContact.observe(contactImages)
 
 
 window.addEventListener('resize', function() {
@@ -190,4 +211,18 @@ function removeProjRumble(){
             child.classList.remove("rumble-2")
         }
     })
+}
+
+function removeTitleAnime(id){
+    document.querySelector(id+'>div').classList.remove('anime-outer-left')
+    document.querySelector(id+'>div>div').classList.remove('anime-inner-left')
+    document.querySelector(id+'>div>div>div').classList.remove('anime-section-outer-left')
+    document.querySelector(id+'>div>div>div>div').classList.remove('anime-section-inner-left')
+}
+
+function addTitleAnime(id){
+    document.querySelector(id+'>div').classList.add('anime-outer-left')
+    document.querySelector(id+'>div>div').classList.add('anime-inner-left')
+    document.querySelector(id+'>div>div>div').classList.add('anime-section-outer-left')
+    document.querySelector(id+'>div>div>div>div').classList.add('anime-section-inner-left')
 }
