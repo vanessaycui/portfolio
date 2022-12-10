@@ -54,11 +54,6 @@ html{
   border: 4px solid var(--alloverbgcolor)
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbarhover);
-  cursor: cell;
-}
 body {
   display: flex;
   flex-direction: column;
@@ -614,11 +609,11 @@ footer{
    }
    
 }
-/* essentially converting this into a single page*/
+/* --------essentially converting this into a single page--------------- */
 @media only screen and (min-width: 900px){
-  *{
+  /* *{
     overflow: hidden;
-  };
+  }; */
   body {
     display: flex;
     flex-direction: column;
@@ -690,7 +685,7 @@ footer{
   #right-side-links {
       display: block;
   }
-  /*  content */
+  /* ----- content ------- */
   svg{
     height:140px; 
   }
@@ -720,7 +715,7 @@ footer{
   }
 
   #about{
-    display: none;
+    /* display: none; */
     padding: 10% 0;
     font-size: 1.1rem;
     height: 100vh;
@@ -771,9 +766,9 @@ footer{
     width: 40%;
   }
   #work-edu{
-    display: none;
+    /* display: none; */
     padding: 10% 0;
-    overflow-y: scroll;
+
   }
  
   .container{
@@ -798,8 +793,8 @@ footer{
   .content{
     display:block;
     position: relative;
-    width: 260px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
     background-color: var(--jobcardbgcolor);
     padding: 15px;
     border-radius: 20px;
@@ -825,9 +820,9 @@ footer{
     margin: 0;
   }
   #projects{
-    display: none;
+    /* display: none; */
     padding: 10% 0;
-    overflow-y: scroll;
+
   }
   .project-card-container{
     display: flex;
@@ -855,7 +850,7 @@ footer{
   }
   
   #contact{
-    display: none;
+    /* display: none; */
     padding: 10% 0;
     font-size: 1.25rem;
   }
@@ -869,7 +864,7 @@ footer{
   }
   footer{
     padding-bottom: 1%;
-    position: absolute;
+    /* position: absolute; */
     bottom:0;
     width: 100%;
     margin: 0;
@@ -882,7 +877,7 @@ footer{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 3%;
     height: 100vh;
@@ -911,7 +906,8 @@ footer{
   }
 
   #left-side-links>div:nth-child(4){
-    position: absolute;
+
+    position: fixed;
     bottom: 0;
     height: 65%;
     border: 1px solid black;
