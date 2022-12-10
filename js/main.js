@@ -1,4 +1,5 @@
 /*----- constants -----*/
+
 /*----- app's state (variables) -----*/
 let count = 0
 
@@ -15,10 +16,79 @@ const menuLinks = document.querySelector('.menu ul')
 
 const navLinks = document.querySelector('#nav-links')
 const allNavLinks = document.querySelectorAll('#nav-links>a')
-const navTitle = document.querySelector('#nav-title>div>h1')
+const navTitle = document.querySelector('#nav-title>div>a>h1')
 const entireWindow = document.querySelector('*')
 
-/*----- event listeners -----*/
+const bioImages = document.querySelector('#right-about-container')
+const experienceImages = document.querySelector('.work-edu-content')
+const projectImages = document.querySelector('.project-card-container')
+
+/*----- init execution of functions-----*/
+removeBioRumble()
+removeExpRumble()
+removeProjRumble()
+/*----- event listeners / observers -----*/
+
+//this keeps track of what is in view, triggering animations.
+const observerBio = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            console.log('bio')
+            bioImages.childNodes.forEach((child) =>{
+                if (child.id ==="bio-img-bg"){
+                    child.classList.add("rumble-1")
+                }else if (child.id ==="bio-img"){
+                    child.classList.add("rumble-2")
+                }
+            })
+        }
+        setTimeout(removeBioRumble, 1900) // need to match duration of full animation
+    })
+})
+
+// *********** adding new job? add animation here.
+const observerWork = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            console.log('work')
+            experienceImages.childNodes.forEach((child) =>{
+                if (child.id ==="one"){
+                    child.classList.add("rumble-1")
+                }else if (child.id ==="two"){
+                    child.classList.add("rumble-2")
+                }else if (child.id ==="three"){
+                    child.classList.add("rumble-3")
+                }else if (child.id ==="edu"){
+                    child.classList.add("rumble-4")
+                }
+            })
+        }
+        setTimeout(removeExpRumble, 1700)// need to match duration of full animation
+    })
+})
+
+const observerProj = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            console.log('proj')
+            projectImages.childNodes.forEach((child) =>{
+                if (child.id ==="good-food"){
+                    child.classList.add("rumble-1")
+                }else if (child.id ==="snake"){
+                    child.classList.add("rumble-2")
+                    
+                }
+            })
+        }
+        setTimeout(removeProjRumble, 1900) 
+    })
+})
+
+
+
+observerWork.observe(experienceImages)
+observerBio.observe(bioImages)
+observerProj.observe(projectImages)
 
 
 window.addEventListener('resize', function() {
@@ -28,16 +98,11 @@ window.addEventListener('resize', function() {
         }
     })
     if (window.innerWidth < 900) {
-        allNavLinks.forEach(link=>{
-            document.querySelector(link.hash).style.display='flex'
             navTitle.style.pointerEvents= "none"
-        })
+   
     } else {
-        allNavLinks.forEach(link=>{
-            document.querySelector(link.hash).style.display='none'
-            document.querySelector("#intro").style.display='flex'
+
             navTitle.style.pointerEvents= "auto"
-        })
     }
   }, true);
 
@@ -91,8 +156,38 @@ emailBtn.addEventListener("click", (event)=>{
     window.open('mailto:vanessa.y.cui@gmail.com')
 })
 
-
-
-
-
 /*----- functions -----*/
+
+function removeBioRumble(){
+    bioImages.childNodes.forEach((child, index) =>{
+        if (child.id ==="bio-img-bg"){
+            child.classList.remove("rumble-1")
+        }else if (child.id ==="bio-img"){
+            child.classList.remove("rumble-2")
+        }
+    })
+}
+
+function removeExpRumble(){
+    experienceImages.childNodes.forEach((child) =>{
+        if (child.id ==="one"){
+            child.classList.remove("rumble-1")
+        }else if (child.id ==="two"){
+            child.classList.remove("rumble-2")
+        }else if (child.id ==="three"){
+            child.classList.remove("rumble-3")
+        }else if (child.id ==="edu"){
+            child.classList.remove("rumble-4")
+        }
+    })
+}
+
+function removeProjRumble(){
+    projectImages.childNodes.forEach((child) =>{
+        if (child.id ==="good-food"){
+            child.classList.remove("rumble-1")
+        }else if (child.id ==="snake"){
+            child.classList.remove("rumble-2")
+        }
+    })
+}
