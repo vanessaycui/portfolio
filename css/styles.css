@@ -140,12 +140,6 @@ h2{
     transition: 1s;
 }
 
-.logo-spin{
-    animation: rotateV 2.5s  both;
-}
-@keyframes rotateV {
-  100%{transform: rotate(270deg)}
-}
 
 #nav-title:hover{
   color:var(--navbarlinkshover);
@@ -416,7 +410,6 @@ ul li{
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #5D9594;
- 
 }
 #snake{
   background-image: url("https://media.giphy.com/media/EW49lIkXwWFIBruEZE/giphy.gif");
@@ -723,30 +716,20 @@ footer{
   }
   #bio-img {
     position: relative;
-    top: -250px;
+    right:0;
     width: 200px;
     z-index: 3;
     opacity: 0.7;
     border: 2px solid black;
-    animation: shootUpBioImg 1s linear;
   }
-  @keyframes shootUpBioImg {
-    from { top: 0;}
-    to { top: -250px;}
-  }
+ 
   #bio-img-bg{
     position: relative;
-    left: 30px;
-    top: 35px;
+    right:0;
     width: 200px;
     height: 260px;
     background-color: var(--bio-container-img-bg);
     z-index: 1;
-    animation: shootUpBioImgBg 1s linear;
-  }
-  @keyframes shootUpBioImgBg {
-    from { top: -500px;}
-    to { top: 35px;}
   }
 
   .about-content{
@@ -768,7 +751,6 @@ footer{
   #work-edu{
     /* display: none; */
     padding: 10% 0;
-
   }
  
   .container{
@@ -778,18 +760,7 @@ footer{
     visibility: visible;
     opacity: 1;
   }
-  #one{
-    animation: upstuff 3s;
-  }
-  #two{
-    animation: upstuff 3.5s;
-  }
-  #three{
-    animation: upstuff 4s;
-  }
-  #edu{
-    animation: upstuff 4.5s;
-  }
+ 
   .content{
     display:block;
     position: relative;
@@ -836,28 +807,17 @@ footer{
     width: 400px;
     margin: 0px;
   }
-
-  #good-food{
-    position: relative;
-    bottom:0px;
-    animation: upstuff 2s;
-  }
-
-  #snake{
-    position: relative;
-    bottom:0px;
-    animation: upstuff 3s ;
-  }
   
   #contact{
     /* display: none; */
     padding: 10% 0;
     font-size: 1.25rem;
   }
+
   #contact-content{
     position: relative;
-    animation: upstuff 1s;
   }
+
   #contact>button{
     display: block;
     margin: 0 auto;
@@ -906,7 +866,6 @@ footer{
   }
 
   #left-side-links>div:nth-child(4){
-
     position: fixed;
     bottom: 0;
     height: 65%;
@@ -982,7 +941,7 @@ footer{
 
   }
 
-  #bio-img {
+  /* #bio-img {
     position: relative;
     top: -340px;
     width: 250px;
@@ -990,8 +949,8 @@ footer{
     opacity: 0.7;
     border: 2px solid black;
     animation: shootUpBioImg 1s linear;
-  }
-  @keyframes shootUpBioImg {
+  } */
+  /* @keyframes shootUpBioImg {
     from { top: 0;}
     to { top: -340px;}
   }
@@ -1008,7 +967,7 @@ footer{
   @keyframes shootUpBioImgBg {
     from { top: -500px;}
     to { top: 35px;}
-  }
+  } */
   @keyframes text-clip {
     from {
       clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
@@ -1035,6 +994,33 @@ footer{
   }
 }
 
+/* animation progressions */
+.rumble_one{
+  transform: scale(0.8);
+  animation: scale 0.5s forwards cubic-bezier(0.5, 1.1, 0.9, 1.1);
+}
+.rumble_two{
+  transform: scale(0.8);
+  animation: scale 0.7s forwards cubic-bezier(0.5, 1.2, 0.9, 1.2);
+}
+.rumble_three{
+  transform: scale(0.8);
+  animation: scale 0.9s forwards cubic-bezier(0.5, 1.3, 0.9, 1.3);
+}
+.rumble_four{
+  transform: scale(0.8);
+  animation: scale 1.1s forwards cubic-bezier(0.5, 1.5, 0.9, 1.5);
+}
+.rumble_five{
+  transform: scale(0.8);
+  animation: scale 1.3s forwards cubic-bezier(0.5, 1.7, 0.9, 1.7);
+}
+.rumble_six{
+  transform: scale(0.8);
+  animation: scale 1.5s forwards cubic-bezier(0.5, 1.9, 0.9, 1.9);
+}
+
+
 @keyframes scale {
   100% {
     transform: scale(1);
@@ -1048,10 +1034,6 @@ footer{
 @keyframes shootUp {
   from { bottom: -900px; }
   to { bottom: 0px; }
-}
-@keyframes upstuff {
-  from { bottom: -1000px;}
-  to { bottom: 0px;}
 }
 
 @keyframes fadeInScale {

@@ -20,9 +20,6 @@ const entireWindow = document.querySelector('*')
 
 /*----- event listeners -----*/
 
-window.onscroll = function(event) {
-    console.log("scroll")
-};
 
 window.addEventListener('resize', function() {
     allNavLinks.forEach(link=>{
@@ -94,30 +91,7 @@ emailBtn.addEventListener("click", (event)=>{
     window.open('mailto:vanessa.y.cui@gmail.com')
 })
 
-// navLinks.addEventListener('click', (event)=>{
-    
-//     allNavLinks.forEach(link=>{ 
-//         if (link.id !==""){
-//             document.querySelector('#'+link.id).classList.remove("nav-links-active")
-//         }
-//         document.querySelector(link.hash).style.display='none'
-//     })
 
-//     if (event.target.tagName ==='A'){
-        
-//         document.querySelector(event.target.hash).style.display='block'
-//         document.querySelector(event.target.hash).classList.add("fade-in")       
-//     }
-//     document.querySelector('#'+event.target.id).classList.add("nav-links-active")
-// })
-
-// navTitle.addEventListener('click', (event)=>{
-//     allNavLinks.forEach(link=>{
-//         document.querySelector(link.hash).style.display='none'
-//     })
-//     document.querySelector("#intro").style.display='flex'
-
-// })
 
 
 
