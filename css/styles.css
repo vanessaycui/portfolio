@@ -1,5 +1,6 @@
 :root {
   --alloverbgcolor: whitesmoke;
+  --alloverbgcolor-proj:black;
   --navbarlinks: black;
   --navbarlinkshover: grey;
   --navbarlinkshoverbg:red;
@@ -7,20 +8,20 @@
   --navbgcolor: whitesmoke;
 
   --scrollbar: black;
-  --scrollbarhover: pink;
+  --scrollbarhover: grey;
 
   --menubg: black;
   --menulinkbg: rgba(255,255,255,0.8);
   --menulinkcolor: black;
 
-  --bio-container-img-bg: pink;
+  --bio-container-img-bg: grey;
 
   --resumebtnbg: orange;
   --resumebtnhover: grey;
   --resumebtncolor: grey;
   --resumebtnhovercolor: orange;
 
-  --jobcardbgcolor: pink;
+  --jobcardbgcolor: grey;
   --jobcardbgcolorhover: rgb(250, 227, 231);
 
   --tabinactive: grey;
@@ -39,7 +40,7 @@ html{
   scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 /* Track */
@@ -140,11 +141,15 @@ h2{
     transition: 1s;
 }
 
+#nav-title a{
+  text-decoration: none;
+  color: var(--navbarlinks);
+}
 
 #nav-title:hover{
   color:var(--navbarlinkshover);
   font-style:italic;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   transition: 1s;
 }
 
@@ -298,10 +303,12 @@ main{
 #about {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   margin: 0 0 20% 0;
   padding-top: 80px;
+}
+#about-experience{
+  display: none;
 }
 
 #bio-img {
@@ -311,7 +318,6 @@ main{
   z-index: 3;
   opacity: 0.7;
   border: 2px solid black;
-
 }
 
 #bio-img-bg{
@@ -331,9 +337,16 @@ main{
   justify-content: flex-start;
   align-items: center;
 }
+#left-about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 
 #work-edu{
   padding-top: 80px;
+  height: 100vh;
 }
 
 .container{
@@ -395,34 +408,43 @@ ul li{
 #projects{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px 10px;
+  height: 100%
+}
+.project-card-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 20px;
 }
 
 .project-card{
-  height: 200px;
-  width: 250px;
-  margin: 5%;
+  height: auto;
+  width:auto;
+  margin: 0px;
+  flex: 1 1 1;
 }
 
 #good-food{
-  background-image: url("https://media.giphy.com/media/GUnfYM1mNcfWVOLhOZ/giphy.gif");
-  background-size: cover;
+  /* background-image: url("https://media.giphy.com/media/GUnfYM1mNcfWVOLhOZ/giphy.gif"); */
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: #5D9594;
 }
 #snake{
-  background-image: url("https://media.giphy.com/media/EW49lIkXwWFIBruEZE/giphy.gif");
-  background-size: cover;
+  /* background-image: url("https://media.giphy.com/media/EW49lIkXwWFIBruEZE/giphy.gif"); */
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: #222931;
 }
 .proj-content{
+  position: absolute;
+  top:0;
   display: flex;
-  height: 100%;
   justify-content: center;
   align-items: center;
-  /* background-color: var(--projcontentbg);*/
-  color: transparent;
+  background-color: var(--projcontentbg);
+  color: black;
   opacity: 0.5;
   transition: 1s ease;
 }
@@ -446,6 +468,7 @@ ul li{
 #projects{
   margin: 0 0 20% 0;
   padding-top: 80px;
+  height: 100vh;
 }
 #contact{
   margin: 0 0 10% 0;
@@ -498,6 +521,17 @@ ul li{
 }
 .linkedin{
   background-image: url('/img/linkedin.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.github-white{
+  background-image: url('/img/github-white.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.linkedin-white{
+  background-image: url('/img/linkedin-white.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -601,11 +635,19 @@ footer{
    }
    
 }
+@media only screen and (min-width: 900px){
+  svg{
+    height:130px; 
+  }
+  svg text {
+    letter-spacing: 5px;
+    font-size: 6rem;    
+   }
+
+}
 /* --------essentially converting this into a single page--------------- */
 @media only screen and (min-width: 900px){
-  /* *{
-    overflow: hidden;
-  }; */
+
   body {
     display: flex;
     flex-direction: column;
@@ -682,7 +724,7 @@ footer{
   }
   svg text {
     letter-spacing: 6px;
-    font-size: 7.6rem;   
+    font-size: 6.8rem;   
     height:100px; 
   }
   .title{
@@ -708,14 +750,45 @@ footer{
 
   #about{
     padding: 10% 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 0;
-    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height:auto;
+  }
+
+  #about-experience{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: relative;
+    top:-50px;
+  }
+  #about-experience-roles{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+  }
+  .about-edu-content{
+    /* width: 50%; */
+    /*height:200px; */
+    background-color: var(--jobcardbgcolor);
+    border-radius: 10px;
+    padding: 10px; 
+    flex: 1 0 0;
+  }
+  
+  .about-edu-content:hover{
+    background-color: var(--jobcardbgcolorhover);
+    border-radius: 10px;
   }
 
   #bio-img {
     position: relative;
-    right:0;
+    top: -250px;;
     width: 200px;
     z-index: 3;
     opacity: 0.7;
@@ -724,32 +797,44 @@ footer{
  
   #bio-img-bg{
     position: relative;
-    right:0;
+    top: 0;
     width: 200px;
-    height: 260px;
+    height: 280px;
     background-color: var(--bio-container-img-bg);
     z-index: 1;
+  }
+  #about-new-tech{
+    position: relative;
+    padding-left: 3%;
   }
 
   .about-content{
     display:flex;
-    flex-direction: row;
-    flex: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
+  #upper-about{
+    display:flex;
+    flex-direction: row;
+  }
+
   #left-about-container{
     width: 60%;
-    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   #right-about-container{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 40%;
+
   }
   #work-edu{
-    padding: 10% 0;
-    height: 100vh;
+    display: none;
   }
  
   .container{
@@ -763,10 +848,9 @@ footer{
   .content{
     display:block;
     position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: var(--jobcardbgcolor);
-    padding: 15px;
+    width: 100%;
+    /* background-color: var(--jobcardbgcolor); */
+    padding: 5px;
     border-radius: 20px;
     transition: 0.3s;
   }
@@ -775,41 +859,51 @@ footer{
     cursor:cell;
     transition: 0.3s;
   }
-
+ 
   .work-edu-content{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap:10px;
     height: 90%;
-
+    width: 100%;
   }
   #edu{
     margin: 0;
   }
   #projects{
     padding: 10% 0;
-    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%
   }
   .project-card-container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px 20px;
+    width: 100%
   }
 
   .project-card{
-    height: 350px;
-    width: 400px;
+    /* height: 400px; */
+    /* width: 500px; */
+    height: auto;
+    width:auto;
     margin: 0px;
+    flex: 0 0 auto;
   }
   
   #contact{
     padding: 10% 0;
     font-size: 1.25rem;
-    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height:50vh;
+    width: 100%;
   }
 
   #contact-content{
@@ -881,7 +975,6 @@ footer{
   }
   .title {
     font-family: "Prata", serif;
-    padding-left: 2%;
     font-size: 5rem;
     text-align: left;
     z-index: 2;
@@ -890,17 +983,17 @@ footer{
   }
 
   .anime-outer-left{
-    animation: outer-left 0.7s 0.7s ease both;
+    /* animation: outer-left 0.7s 0.7s ease both; */
   }
   .anime-inner-left{
-    animation: inner-left 0.7s 0.7s ease both;
+    /* animation: inner-left 0.7s 0.7s ease both; */
   }
 
   .anime-section-outer-left{
-    animation: outer-left 0.7s 0.7s cubic-bezier(0.5, 0, 0.1, 1) both;
+    /* animation: outer-left 0.7s 0.7s cubic-bezier(0.5, 0, 0.1, 1) both; */
   }
   .anime-section-inner-left{
-    animation: inner-left 0.7s 0.7s ease both, text-clip 0.5s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+    animation: text-clip 1s 0s  cubic-bezier(0.5, 0, 0.1, 1);
   }
 
   .title-inner {
@@ -940,6 +1033,14 @@ footer{
 }
 
 @media only screen and (min-width: 1000px){
+  svg{
+    height:130px; 
+  }
+  svg text {
+    letter-spacing: 5px;
+    font-size: 7.6rem;    
+   }
+
   main{
     max-width: 1500px;
   }

@@ -4,6 +4,10 @@
 let count = 0
 
 /*----- cached element references -----*/
+const body = document.querySelector('body')
+const nav = document.querySelector('nav')
+const leftSideLine = document.querySelector('#left-side-links>div:nth-child(4)')
+const leftSideLinks = document.querySelector('#left-side-links')
 
 const jobTabs = document.querySelector('.job-tabs')
 const allTabs = document.querySelectorAll('.tab')
@@ -20,7 +24,7 @@ const navTitle = document.querySelector('#nav-title>div>a>h1')
 const entireWindow = document.querySelector('*')
 
 const bioImages = document.querySelector('#right-about-container')
-const experienceImages = document.querySelector('.work-edu-content')
+const experienceImages = document.querySelector('#about-experience-roles')
 const projectImages = document.querySelector('.project-card-container')
 const contactImages = document.querySelector('#contact')
 
@@ -35,7 +39,21 @@ removeTitleAnime('#about')
 const observerBio = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
+            nav.style.backgroundColor = 'whitesmoke';
+                
+                allNavLinks.forEach(link=>{
+                    link.style.color='black'
+                });
+            navTitle.style.color="black"
+            body.style.backgroundColor="whitesmoke";
+            body.style.color="black";
+            body.style.transition="0.5s linear";
+            leftSideLine.style.borderColor="black"
             addTitleAnime('#about')
+            document.querySelector("#left-git").classList.add("github")
+            document.querySelector("#left-git").classList.remove("github-white")
+            document.querySelector("#left-li").classList.add("linkedin")
+            document.querySelector("#left-li").classList.remove("linkedin-white")
             bioImages.childNodes.forEach((child) =>{
                 if (child.id ==="bio-img-bg"){
                     child.classList.add("rumble-1")
@@ -55,7 +73,20 @@ const observerBio = new IntersectionObserver(entries =>{
 const observerWork = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
-            addTitleAnime('#work-edu')
+            nav.style.backgroundColor = 'whitesmoke';
+                
+                allNavLinks.forEach(link=>{
+                    link.style.color='black'
+                });
+            body.style.backgroundColor="whitesmoke";
+            navTitle.style.color="black"
+            body.style.color="black";
+            body.style.transition="0.5s linear";
+            leftSideLine.style.borderColor="black"
+            document.querySelector("#left-git").classList.add("github")
+            document.querySelector("#left-git").classList.remove("github-white")
+            document.querySelector("#left-li").classList.add("linkedin")
+            document.querySelector("#left-li").classList.remove("linkedin-white")
             experienceImages.childNodes.forEach((child) =>{
                 if (child.id ==="one"){
                     child.classList.add("rumble-1")
@@ -84,20 +115,56 @@ const observerProj = new IntersectionObserver(entries =>{
                     child.classList.add("rumble-1")
                 }else if (child.id ==="snake"){
                     child.classList.add("rumble-2")
-                    
                 }
             })
+            
+                nav.style.backgroundColor ="var(--alloverbgcolor-proj)"
+                navTitle.style.color="whitesmoke"
+                
+                nav.style.transition="0.5s linear";
+                allNavLinks.forEach(link=>{
+                    link.style.color='whitesmoke'
+                })
+                body.style.backgroundColor="var(--alloverbgcolor-proj)"
+                body.style.color="whitesmoke";
+                body.style.transition="0.5s linear";
+                leftSideLine.style.borderColor="whitesmoke"
+                console.log(leftSideLinks.childNodes[1])
+
+                document.querySelector("#left-git").classList.remove("github")
+                document.querySelector("#left-git").classList.add("github-white")
+                document.querySelector("#left-li").classList.remove("linkedin")
+                document.querySelector("#left-li").classList.add("linkedin-white")
+           
+            
+
         }
         setTimeout(()=>{
             removeTitleAnime('#projects')
         }, 2000)
         setTimeout(removeProjRumble, 1900) 
+       
     })
 })
 
 const observerContact = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
+            body.style.backgroundColor="whitesmoke";
+            body.style.color="black";
+            body.style.transition="0.5s linear";
+            nav.style.backgroundColor = 'whitesmoke';
+            navTitle.style.color="black"
+            leftSideLine.style.borderColor="black"
+            
+            document.querySelector("#left-git").classList.add("github")
+            document.querySelector("#left-git").classList.remove("github-white")
+            document.querySelector("#left-li").classList.add("linkedin")
+            document.querySelector("#left-li").classList.remove("linkedin-white")
+                
+            allNavLinks.forEach(link=>{
+                link.style.color='black'
+            });
             addTitleAnime('#contact')
         }
         setTimeout(()=>{
@@ -147,6 +214,17 @@ menuBtn.addEventListener('click', (event)=>{
       menuLinks.style.pointerEvents='none'
     }
   })
+
+  navLinks.addEventListener('click', (event)=>{
+    
+    allNavLinks.forEach(link=>{ 
+        if (link.id !==""){
+            document.querySelector('#'+link.id).classList.remove("nav-links-active")
+        }
+    })
+    document.querySelector('#'+event.target.id).classList.add("nav-links-active")
+})
+
 
 jobTabs.addEventListener("click", (event)=>{
     if (event.target.tagName ==="A"){
