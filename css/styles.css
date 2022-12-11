@@ -409,35 +409,41 @@ ul li{
   display: flex;
   flex-direction: column;
   gap: 10px 10px;
-  height: 100%
+  margin: 0 0 20% 0;
+  padding-top: 80px;
+
 }
 .project-card-container{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px 20px;
+ 
 }
 
 .project-card{
   height: auto;
   width:auto;
-  margin: 0px;
-  flex: 1 1 1;
+  flex: 0 1 1;
 }
 
-#good-food{
+#good-food>img{
   /* background-image: url("https://media.giphy.com/media/GUnfYM1mNcfWVOLhOZ/giphy.gif"); */
-  background-size: contain;
-  background-repeat: no-repeat;
+  max-height:100%; 
+  max-width:100%;
+  object-fit: contain;
   background-color: #5D9594;
+
 }
-#snake{
+#snake>img{
   /* background-image: url("https://media.giphy.com/media/EW49lIkXwWFIBruEZE/giphy.gif"); */
-  background-size: contain;
-  background-repeat: no-repeat;
   background-color: #222931;
+  max-height:100%; 
+  max-width:100%;
+  object-fit: contain;
+
 }
-.proj-content{
+/* .proj-content{
   position: absolute;
   top:0;
   display: flex;
@@ -455,7 +461,7 @@ ul li{
   transition: 1s ease;
   font-size: 1.2rem;
   cursor: pointer;
-}
+} */
 .image-border{
   border-radius: 10px;
 }
@@ -465,11 +471,7 @@ ul li{
   justify-content: flex-start;
   align-items: center;
 }
-#projects{
-  margin: 0 0 20% 0;
-  padding-top: 80px;
-  height: 100vh;
-}
+
 #contact{
   margin: 0 0 10% 0;
   padding: 80px 0;
@@ -601,8 +603,8 @@ footer{
     width: 500px;
   }
   .project-card{
-    height: 200px;
-    width: 250px;
+    /* height: 200px;
+    width: 250px; */
   }
   svg{
     height:100px; 
@@ -623,8 +625,8 @@ footer{
     width: 750px;
   }
   .project-card{
-    height: 300px;
-    width: 350px;
+    /* height: 300px;
+    width: 350px; */
   }
   svg{
     height:130px; 
@@ -879,22 +881,7 @@ footer{
     align-items: flex-start;
     width: 100%
   }
-  .project-card-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px 20px;
-    width: 100%
-  }
-
-  .project-card{
-    /* height: 400px; */
-    /* width: 500px; */
-    height: auto;
-    width:auto;
-    margin: 0px;
-    flex: 0 0 auto;
-  }
+  
   
   #contact{
     padding: 10% 0;
