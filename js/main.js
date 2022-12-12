@@ -25,6 +25,7 @@ const entireWindow = document.querySelector('*')
 
 const bioImages = document.querySelector('#right-about-container')
 const experienceImages = document.querySelector('#about-experience-roles')
+const experienceSection = document.querySelector('.job-tabs')
 const projectImages = document.querySelector('.project-card-container')
 const proj1 = document.querySelector('#good-food')
 const proj2 = document.querySelector('#snake')
@@ -65,6 +66,8 @@ const observerBio = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(48, 56, 65,0.4)')
             document.documentElement.style.setProperty('--menubg','#092532') 
             document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')  
+            document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
+            document.documentElement.style.setProperty('--menulinkbg','#303841')
             bioImages.childNodes.forEach((child) =>{
                 if (child.id ==="bio-img-bg"){
                     child.classList.add("rumble-1")
@@ -104,6 +107,8 @@ const observerWork = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(48, 56, 65,0.4)')  
             document.documentElement.style.setProperty('--menubg','#092532') 
             document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
+            document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
+            document.documentElement.style.setProperty('--menulinkbg','#303841')
             experienceImages.childNodes.forEach((child) =>{
                 if (child.id ==="one"){
                     child.classList.add("rumble-1")
@@ -123,20 +128,39 @@ const observerWork = new IntersectionObserver(entries =>{
     })
 }, [1])
 
+const observerWorkMobile = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            nav.style.backgroundColor = 'whitesmoke';
+                
+                allNavLinks.forEach(link=>{
+                    link.style.color='black'
+                });
+            body.style.backgroundColor="whitesmoke";
+            navTitle.style.color="black"
+            body.style.color="black";
+            body.style.transition="0.5s linear";
+            leftSideLine.style.borderColor="black"
+            footer.style.backgroundColor="var(--alloverbgcolor)"
+            document.querySelector("#left-git").classList.add("github")
+            document.querySelector("#left-git").classList.remove("github-white")
+            document.querySelector("#left-li").classList.add("linkedin")
+            document.querySelector("#left-li").classList.remove("linkedin-white")
+            document.querySelector("#resume-link").style.border="2px solid var(--navbarlinks)"
+            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'whitesmoke')
+            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(48, 56, 65,0.4)')  
+            document.documentElement.style.setProperty('--menubg','#092532') 
+            document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
+            document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
+            document.documentElement.style.setProperty('--menulinkbg','#303841')
+        }
+    })
+}, [1])
+
 const observerProj = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
-            addTitleAnime('#projects')
-            // projectImages.childNodes.forEach((child) =>{
-            //     if (child.id ==="good-food"){
-            //         child.classList.add("rumble-1")
-            //     }else if (child.id ==="snake"){
-            //         child.classList.add("rumble-2")
-            //     }else if (child.id ==="budget"){
-            //         child.classList.add("rumble-3")
-            //     }
-            // })
-            
+            addTitleAnime('#projects')          
                 nav.style.backgroundColor ="var(--alloverbgcolor-proj)"
                 navTitle.style.color="whitesmoke"
                 
@@ -157,7 +181,8 @@ const observerProj = new IntersectionObserver(entries =>{
                 document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(48, 56, 65,0.8)')
                 document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(165,201,202,0.9') 
                 document.documentElement.style.setProperty('--menubg','whitesmoke') 
-                document.documentElement.style.setProperty('--resume-link-bg-color','#EA9215')
+                document.documentElement.style.setProperty('--menulinkbg','rgba(255,255,255,0.9)')
+                document.documentElement.style.setProperty('--menulinkcolor','#303841')
         }
         setTimeout(()=>{
             removeTitleAnime('#projects')
@@ -227,6 +252,8 @@ const observerContact = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(48, 56, 65,0.4)')
             document.documentElement.style.setProperty('--menubg','#092532')   
             document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
+            document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
+            document.documentElement.style.setProperty('--menulinkbg','#303841')
             allNavLinks.forEach(link=>{
                 link.style.color='black'
             });
@@ -239,6 +266,7 @@ const observerContact = new IntersectionObserver(entries =>{
 },[1])
 
 observerWork.observe(experienceImages)
+observerWorkMobile.observe(experienceSection)
 observerBio.observe(bioImages)
 observerProj.observe(projectImages)
 obsProj1.observe(proj1)

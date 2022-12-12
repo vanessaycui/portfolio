@@ -15,10 +15,9 @@
   --scrollbar: #37474F;
   --scrollbarhover: grey;
 
-  --menubg: #37474F;
-  --menulinkbg: transparent;
-  --menulinkcolor: #222831;
-  --menutextshadow:#EEEEEE;
+  --menubg: #37474F; 
+  --menulinkcolor: rgba(255,255,255,0.9);
+  --menulinkbg: #303841;
 
   --bio-container-img-bg: #BDC3C7;
   --bio-img-border:#BDC3C7;
@@ -26,8 +25,8 @@
   --jobcardbgcolorhover: #A3C6C4;
   --jobcardbgcolor: #E0E7E9;
 
-  --tabinactive: grey;
-  --tabactive: pink;
+  --tabinactive: #37474F;
+  --tabactive: #A3C6C4;
 
  
   --projectcontentcolor: #37474F;
@@ -178,7 +177,6 @@ h2{
   transition: all 0.25s ease-in-out;
   cursor: pointer;
   color: var(--menulinkcolor);
-  text-shadow: 1px 1px var(--menutextshadow), 2px 2px 1px var(--menutextshadow);
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -231,14 +229,24 @@ h2{
   position: absolute;
   top: 13px;
   height: 100vh;
-  background-color:var(--menulinkbg);
+  background-color:transparent;
   right: -15px;
   pointer-events:none;
+  
 }
 .menu ul.menu-links li>a{
   text-decoration: none;
   color: var(--menulinkcolor);
+  background: var(--menulinkbg);
+  border-radius: 10px;
+  padding: 7px;
+  font-weight:500;
+}
 
+.menu ul.menu-links li>a:hover{
+  text-decoration: none;
+  padding: 5%;
+  font-size:2rem;
 }
 .menu ul.menu-links li {
   position: relative;
@@ -251,6 +259,7 @@ h2{
   text-align: right;
   text-transform: uppercase;
   transition: all 0.25s ease-in-out;
+  
 }
 
 .sticky {
@@ -1012,16 +1021,17 @@ footer{
 
   .anime-section-inner-left{
     animation: text-clip 1s 0s  cubic-bezier(0.5, 0, 0.1, 1);
+   
   }
 
-  .title-inner {
+  /* .title-inner {
     display: inline block;
-    padding: 0 12% 0 0%;
+    /* padding: 0 12% 0 0%; */
     
-  }
+  } */
   .section-inner {
     display: inline-block;
-  }
+    
   @keyframes text-clip {
     from {
       clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
@@ -1063,10 +1073,10 @@ footer{
     max-width: 1500px;
   }
 
-  .title-inner {
+  /* .title-inner {
     padding: 0 15% 0 0%;
 
-  }
+  } */
 
   @keyframes text-clip {
     from {
