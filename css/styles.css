@@ -562,23 +562,23 @@ ul li{
   width: 40px;
 }
 .github{
-  background-image: url('https://imgur.com/lpQg4og');
+  background-image: url('/img/github.PNG');
   background-size: contain;
   background-repeat: no-repeat;
 }
 .linkedin{
-  background-image: url('https://imgur.com/f93WR8V');
+  background-image: url('/img/linkedin.PNG');
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .github-white{
-  background-image: url('https://imgur.com/nEWvgHg');
+  background-image: url('/img/github-white.PNG');
   background-size: contain;
   background-repeat: no-repeat;
 }
 .linkedin-white{
-  background-image: url('https://imgur.com/neMh6od');
+  background-image: url('/img/linkedin-white.PNG');
   background-size: contain;
   background-repeat: no-repeat;
 }
