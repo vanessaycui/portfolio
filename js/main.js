@@ -38,7 +38,6 @@ removeExpRumble()
 removeProj1Rumble()
 removeProj2Rumble()
 removeProj3Rumble()
-removeTitleAnime('#about')
 /*----- event listeners / observers -----*/
 
 //this keeps track of what is in view, triggering animations.
@@ -286,14 +285,16 @@ menuBtn.addEventListener('click', (event)=>{
 
 jobTabs.addEventListener("click", (event)=>{
     if (event.target.tagName ==="A"){
-    allTabs.forEach(tab => {
-        tab.classList.remove("active")
-        let section = tab.id.split("-")[1]
-        document.querySelector('#'+section).classList.add("work-edu-hide")
-    })
-    event.target.classList.add("active")
-    let section = event.target.id.split("-")[1]
-    document.querySelector('#'+section).classList.remove("work-edu-hide")  
+        allTabs.forEach(tab => {
+            tab.classList.remove("active")
+            let section = tab.id.split("-")[1]
+            document.querySelector('#'+section+'-mobile').classList.add("work-edu-hide")
+         
+        })
+        event.target.classList.add("active")
+        let section = event.target.id.split("-")[1]
+        document.querySelector('#'+section+'-mobile').classList.remove("work-edu-hide")  
+     
 
 }})
 

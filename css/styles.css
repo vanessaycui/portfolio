@@ -7,6 +7,8 @@
   --navbarlinksactive: black;
   --navbgcolor: whitesmoke;
 
+  --about-em-color: pink;
+
   --scrollbar: black;
   --scrollbarhover: grey;
 
@@ -313,6 +315,9 @@ main{
 #about-experience{
   display: none;
 }
+em{
+  color: var(--about-em-color);
+}
 
 #bio-img {
   position: relative;
@@ -459,7 +464,7 @@ ul li{
 }
 
 .centered-info{
-  width: 80%;
+  width: 90%;
   height: 100%;
   border-radius: 10px;
   position: absolute;
@@ -903,6 +908,9 @@ footer{
     width: 100%
   }
   
+  .centered-info{
+    width: 80%;
+  }
   
   #contact{
     padding: 10% 0;
