@@ -10,7 +10,7 @@
   --about-em-color: #395B64;
   --project-em-color: #A3C6C4;
 
-  --strokelinesname: #E7F6F2;
+  --strokelinesname: #395B64;
 
   --scrollbar: #37474F;
   --scrollbarhover: grey;
@@ -425,7 +425,7 @@ ul li{
   flex-direction: column;
   justify-content: center;
   gap: 10px 10px;
-  margin: 0 0 20% 0;
+  margin: 0 0 50% 0;
   padding-top: 80px;
 
 }
@@ -504,6 +504,7 @@ ul li{
 #contact{
   margin: 0 0 10% 0;
   padding: 80px 0;
+  height: 50vh;
 }
 #contact-content{
   display: flex;
@@ -1148,13 +1149,13 @@ footer{
  0% {
    stroke-dasharray: 0 50%;
    stroke-dashoffset:  20%;
-   fill:hsl(189, 16%, 25%)
+   fill:hsla(189, 16%, 25%, 50%)
  }
  
  100% {
    stroke-dasharray: 50% 0;
    stroke-dashoffstet: -20%;
-   fill:	hsl(193, 27%, 31%)
+   fill:	hsla(193, 27%, 31%, 90%)
  }
  
 }
