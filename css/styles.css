@@ -14,6 +14,8 @@
 
   --scrollbar: #37474F;
   --scrollbarhover: grey;
+  --scrollbartrack: var(--alloverbgcolor);
+  --scrollbarthumb:var(--alloverbgcolor);
 
   --menubg: #37474F; 
   --menulinkcolor: rgba(255,255,255,0.9);
@@ -50,14 +52,14 @@ html{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--alloverbgcolor);
+  background: var(--scrollbartrack);
   
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background:var(--scrollbar);
-  border: 4px solid var(--alloverbgcolor)
+  border: 4px solid var(--scrollbarthumb);
 }
 
 body {

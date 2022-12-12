@@ -67,7 +67,10 @@ const observerBio = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--menubg','#092532') 
             document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')  
             document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
-            document.documentElement.style.setProperty('--menulinkbg','#303841')
+            document.documentElement.style.setProperty('--menulinkbg','rgba(48,56,65,0.9)')
+            document.documentElement.style.setProperty('--scrollbar', '#37474F')
+            document.documentElement.style.setProperty('--scrollbartrack', 'var(--alloverbgcolor)')
+            document.documentElement.style.setProperty('--scrollbarthumb', 'var(--alloverbgcolor')
             bioImages.childNodes.forEach((child) =>{
                 if (child.id ==="bio-img-bg"){
                     child.classList.add("rumble-1")
@@ -108,7 +111,10 @@ const observerWork = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--menubg','#092532') 
             document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
             document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
-            document.documentElement.style.setProperty('--menulinkbg','#303841')
+            document.documentElement.style.setProperty('--menulinkbg','rgba(48,56,65,0.9)')
+            document.documentElement.style.setProperty('--scrollbar', '#37474F')
+            document.documentElement.style.setProperty('--scrollbartrack', 'var(--alloverbgcolor)')
+            document.documentElement.style.setProperty('--scrollbarthumb', 'var(--alloverbgcolor')
             experienceImages.childNodes.forEach((child) =>{
                 if (child.id ==="one"){
                     child.classList.add("rumble-1")
@@ -152,7 +158,10 @@ const observerWorkMobile = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--menubg','#092532') 
             document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
             document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
-            document.documentElement.style.setProperty('--menulinkbg','#303841')
+            document.documentElement.style.setProperty('--menulinkbg','rgba(48,56,65,0.9)')
+            document.documentElement.style.setProperty('--scrollbar', '#37474F')
+            document.documentElement.style.setProperty('--scrollbartrack', 'var(--alloverbgcolor)')
+            document.documentElement.style.setProperty('--scrollbarthumb', 'var(--alloverbgcolor')
         }
     })
 }, [1])
@@ -182,7 +191,10 @@ const observerProj = new IntersectionObserver(entries =>{
                 document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(165,201,202,0.9') 
                 document.documentElement.style.setProperty('--menubg','whitesmoke') 
                 document.documentElement.style.setProperty('--menulinkbg','rgba(255,255,255,0.9)')
-                document.documentElement.style.setProperty('--menulinkcolor','#303841')
+                document.documentElement.style.setProperty('--menulinkcolor','rgba(48,56,65,0.9)')
+                document.documentElement.style.setProperty('--scrollbartrack', 'var(--alloverbgcolor-proj')
+                document.documentElement.style.setProperty('--scrollbar', 'var(--alloverbgcolor)')
+                document.documentElement.style.setProperty('--scrollbarthumb', 'var(--alloverbgcolor-proj')
         }
         setTimeout(()=>{
             removeTitleAnime('#projects')
@@ -253,7 +265,10 @@ const observerContact = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--menubg','#092532')   
             document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
             document.documentElement.style.setProperty('--menulinkcolor','rgba(255,255,255,0.9)')
-            document.documentElement.style.setProperty('--menulinkbg','#303841')
+            document.documentElement.style.setProperty('--menulinkbg','rgba(48,56,65,0.9)')
+            document.documentElement.style.setProperty('--scrollbar', '#37474F')
+            document.documentElement.style.setProperty('--scrollbartrack', 'var(--alloverbgcolor)')
+            document.documentElement.style.setProperty('--scrollbarthumb', 'var(--alloverbgcolor')
             allNavLinks.forEach(link=>{
                 link.style.color='black'
             });
