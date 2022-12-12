@@ -60,8 +60,11 @@ const observerBio = new IntersectionObserver(entries =>{
             document.querySelector("#left-git").classList.remove("github-white")
             document.querySelector("#left-li").classList.add("linkedin")
             document.querySelector("#left-li").classList.remove("linkedin-white")
-            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(245,245,245,0.8)')
-            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(0,0,0,1)')  
+            document.querySelector("#resume-link").style.border="2px solid var(--navbarlinks)"
+            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'whitesmoke')
+            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(48, 56, 65,0.4)')
+            document.documentElement.style.setProperty('--menubg','#092532') 
+            document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')  
             bioImages.childNodes.forEach((child) =>{
                 if (child.id ==="bio-img-bg"){
                     child.classList.add("rumble-1")
@@ -96,8 +99,11 @@ const observerWork = new IntersectionObserver(entries =>{
             document.querySelector("#left-git").classList.remove("github-white")
             document.querySelector("#left-li").classList.add("linkedin")
             document.querySelector("#left-li").classList.remove("linkedin-white")
-            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(245,245,245,0.8)')
-            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(0,0,0,1)')  
+            document.querySelector("#resume-link").style.border="2px solid var(--navbarlinks)"
+            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'whitesmoke')
+            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(48, 56, 65,0.4)')  
+            document.documentElement.style.setProperty('--menubg','#092532') 
+            document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
             experienceImages.childNodes.forEach((child) =>{
                 if (child.id ==="one"){
                     child.classList.add("rumble-1")
@@ -143,13 +149,15 @@ const observerProj = new IntersectionObserver(entries =>{
                 body.style.transition="0.5s linear";
                 leftSideLine.style.borderColor="whitesmoke"
                 footer.style.backgroundColor="var(--alloverbgcolor-proj)"
-
+                document.querySelector("#resume-link").style.border="2px solid whitesmoke"
                 document.querySelector("#left-git").classList.remove("github")
                 document.querySelector("#left-git").classList.add("github-white")
                 document.querySelector("#left-li").classList.remove("linkedin")
                 document.querySelector("#left-li").classList.add("linkedin-white")
-                document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(0,0,0,0.8)')
-                document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(255,255,255,1)')  
+                document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(48, 56, 65,0.8)')
+                document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(165,201,202,0.9') 
+                document.documentElement.style.setProperty('--menubg','whitesmoke') 
+                document.documentElement.style.setProperty('--resume-link-bg-color','#EA9215')
         }
         setTimeout(()=>{
             removeTitleAnime('#projects')
@@ -214,8 +222,11 @@ const observerContact = new IntersectionObserver(entries =>{
             document.querySelector("#left-git").classList.remove("github-white")
             document.querySelector("#left-li").classList.add("linkedin")
             document.querySelector("#left-li").classList.remove("linkedin-white")
-            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(245,245,245,0.8)')
-            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(0,0,0,1)')  
+            document.querySelector("#resume-link").style.border="2px solid var(--navbarlinks)"
+            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'whitesmoke')
+            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(48, 56, 65,0.4)')
+            document.documentElement.style.setProperty('--menubg','#092532')   
+            document.documentElement.style.setProperty('--resume-link-bg-color','#A3C6C4')
             allNavLinks.forEach(link=>{
                 link.style.color='black'
             });

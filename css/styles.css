@@ -1,44 +1,45 @@
 :root {
   --alloverbgcolor: whitesmoke;
-  --alloverbgcolor-proj:black;
-  --navbarlinks: black;
-  --navbarlinkshover: grey;
-  --navbarlinkshoverbg:red;
-  --navbarlinksactive: black;
+  --alloverbgcolor-proj:#303841;
+  --navbarlinks: #37474F;
+  --navbarlinkshover: #37474F;
+  --navbarlinksactive: #37474F;
   --navbgcolor: whitesmoke;
+  --resume-link-bg-color: #A3C6C4;
 
-  --about-em-color: pink;
+  --about-em-color: #395B64;
+  --project-em-color: #A3C6C4;
 
-  --scrollbar: black;
+  --strokelinesname: #E7F6F2;
+
+  --scrollbar: #37474F;
   --scrollbarhover: grey;
 
-  --menubg: black;
-  --menulinkbg: rgba(255,255,255,0.8);
-  --menulinkcolor: black;
+  --menubg: #37474F;
+  --menulinkbg: transparent;
+  --menulinkcolor: #222831;
+  --menutextshadow:#EEEEEE;
 
-  --bio-container-img-bg: grey;
+  --bio-container-img-bg: #BDC3C7;
+  --bio-img-border:#BDC3C7;
 
-  --resumebtnbg: orange;
-  --resumebtnhover: grey;
-  --resumebtncolor: grey;
-  --resumebtnhovercolor: orange;
-
-  --jobcardbgcolor: grey;
-  --jobcardbgcolorhover: rgb(250, 227, 231);
+  --jobcardbgcolorhover: #A3C6C4;
+  --jobcardbgcolor: #E0E7E9;
 
   --tabinactive: grey;
   --tabactive: pink;
 
  
-  --projectcontentcolor: black;
-  --projectimghovercolor: white;
-  --projectimghoverbgcolor:rgba(0,0,0,0.8); 
+  --projectcontentcolor: #37474F;
+  --projectimghovercolor: whitesmoke;
+  --projectimghoverbgcolor:rgba(48, 56, 65,0.8);
   /* match background color */
 
-  --emailbtnbg: white;
-  --emailbtncolor:blue;
-  --emailbtnbghover:blue;
-  --emailbtncolorhover:white;
+  --emailbtnbg: #A3C6C4;
+  --emailbtncolor:whitesmoke;
+  --emailbtnbghover:whitesmoke;
+  --emailbtncolorhover: #A3C6C4;
+
   --footerbgcolor: whitesmoke;
 }
 html{
@@ -69,6 +70,7 @@ body {
   font-weight: 300;
   margin: 0;
   background-color: var(--alloverbgcolor);
+  color: var(--navbarlinks)
 }
 svg{
   height:60px; 
@@ -76,11 +78,11 @@ svg{
 svg text {
   font-family: Lora;
   letter-spacing: 0px;
-  stroke: black;
+  stroke: var( --strokelinesname);
   font-size: 3rem;
   font-weight: 700;
-  stroke-width: 2;
-  animation: textAnimate 3s infinite alternate;
+  stroke-width: 2px;
+  animation: textAnimate 5s infinite alternate;
  }
 
 
@@ -176,6 +178,7 @@ h2{
   transition: all 0.25s ease-in-out;
   cursor: pointer;
   color: var(--menulinkcolor);
+  text-shadow: 1px 1px var(--menutextshadow), 2px 2px 1px var(--menutextshadow);
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -319,13 +322,17 @@ em{
   color: var(--about-em-color);
 }
 
+.project-card em{
+  color: var(--project-em-color)
+}
+
 #bio-img {
   position: relative;
   top: -160px;
   width: 150px;
   z-index: 3;
   opacity: 0.7;
-  border: 2px solid black;
+  border: 2px solid var(--bio-img-border);
 }
 
 #bio-img-bg{
@@ -449,18 +456,14 @@ ul li{
 .project-card>div:nth-child(2){
   position: relative;
   text-align: center;
-  color: white;
-  
 } 
 
 .project-card>div:nth-child(2)>img{
-  /* background-image: url("https://media.giphy.com/media/GUnfYM1mNcfWVOLhOZ/giphy.gif"); */
   max-height:100%; 
   max-width:100%;
   object-fit: contain;
   border-radius: 10px;
   margin: 0 auto;
-  /* background-color: #5D9594; */
 }
 
 .centered-info{
@@ -502,12 +505,18 @@ ul li{
   margin: 0 0 10% 0;
   padding: 80px 0;
 }
+#contact-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 #email-btn{
-  padding: 10px 20px;
+  padding: 20px 30px;
   margin: 10px;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: var(--emailbtnbg);
   color: var(--emailbtncolor);
   border: 2px solid var(--emailbtncolor);
@@ -628,10 +637,7 @@ footer{
   .container{
     width: 500px;
   }
-  .project-card{
-    /* height: 200px;
-    width: 250px; */
-  }
+
   svg{
     height:100px; 
   }
@@ -649,10 +655,6 @@ footer{
   }
   .container{
     width: 750px;
-  }
-  .project-card{
-    /* height: 300px;
-    width: 350px; */
   }
   svg{
     height:130px; 
@@ -730,12 +732,20 @@ footer{
     right: 50px;
     transform: scale(0.5);
     animation: scale 2s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    border: 2px solid var(--navbarlinks);
+    border-radius: 10px;
+    padding: 0 50px;
+    transition: 0.3s ease;
+    background-color: var(--resume-link-bg-color);
   }
+  
+
 
   #nav-links>a:hover{
     color: var(--navbarlinkshover);
     font-style: italic;
   }
+
 
   .menu-wrapper{
     display: none;
@@ -801,8 +811,6 @@ footer{
     gap: 20px 20px;
   }
   .about-edu-content{
-    /* width: 50%; */
-    /*height:200px; */
     background-color: var(--jobcardbgcolor);
     border-radius: 10px;
     padding: 10px; 
@@ -820,7 +828,6 @@ footer{
     width: 200px;
     z-index: 3;
     opacity: 0.7;
-    border: 2px solid black;
   }
  
   #bio-img-bg{
@@ -877,7 +884,6 @@ footer{
     display:block;
     position: relative;
     width: 100%;
-    /* background-color: var(--jobcardbgcolor); */
     padding: 5px;
     border-radius: 20px;
     transition: 0.3s;
@@ -916,14 +922,19 @@ footer{
     padding: 10% 0;
     font-size: 1.25rem;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     height:50vh;
     width: 100%;
   }
+  #contact .title{
+    text-align: center;
+
+  }
 
   #contact-content{
-    position: relative;
+    width:100%;
+  
   }
 
   #contact>button{
@@ -998,16 +1009,6 @@ footer{
     
   }
 
-  .anime-outer-left{
-    /* animation: outer-left 0.7s 0.7s ease both; */
-  }
-  .anime-inner-left{
-    /* animation: inner-left 0.7s 0.7s ease both; */
-  }
-
-  .anime-section-outer-left{
-    /* animation: outer-left 0.7s 0.7s cubic-bezier(0.5, 0, 0.1, 1) both; */
-  }
   .anime-section-inner-left{
     animation: text-clip 1s 0s  cubic-bezier(0.5, 0, 0.1, 1);
   }
@@ -1147,13 +1148,13 @@ footer{
  0% {
    stroke-dasharray: 0 50%;
    stroke-dashoffset:  20%;
-   fill:hsl(168, 35%, 36%)
+   fill:hsl(189, 16%, 25%)
  }
  
  100% {
    stroke-dasharray: 50% 0;
    stroke-dashoffstet: -20%;
-   fill: hsla(100, 60%, 0%,70%);
+   fill:	hsl(193, 27%, 31%)
  }
  
 }
