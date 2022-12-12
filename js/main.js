@@ -26,12 +26,18 @@ const entireWindow = document.querySelector('*')
 const bioImages = document.querySelector('#right-about-container')
 const experienceImages = document.querySelector('#about-experience-roles')
 const projectImages = document.querySelector('.project-card-container')
+const proj1 = document.querySelector('#good-food')
+const proj2 = document.querySelector('#snake')
+const proj3 = document.querySelector('#budget')
 const contactImages = document.querySelector('#contact')
+const footer = document.querySelector('footer')
 
 /*----- init execution of functions-----*/
 removeBioRumble()
 removeExpRumble()
-removeProjRumble()
+removeProj1Rumble()
+removeProj2Rumble()
+removeProj3Rumble()
 removeTitleAnime('#about')
 /*----- event listeners / observers -----*/
 
@@ -49,11 +55,14 @@ const observerBio = new IntersectionObserver(entries =>{
             body.style.color="black";
             body.style.transition="0.5s linear";
             leftSideLine.style.borderColor="black"
+            footer.style.backgroundColor="var(--alloverbgcolor)"
             addTitleAnime('#about')
             document.querySelector("#left-git").classList.add("github")
             document.querySelector("#left-git").classList.remove("github-white")
             document.querySelector("#left-li").classList.add("linkedin")
             document.querySelector("#left-li").classList.remove("linkedin-white")
+            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(245,245,245,0.8)')
+            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(0,0,0,1)')  
             bioImages.childNodes.forEach((child) =>{
                 if (child.id ==="bio-img-bg"){
                     child.classList.add("rumble-1")
@@ -67,7 +76,7 @@ const observerBio = new IntersectionObserver(entries =>{
         }, 2000)
         setTimeout(removeBioRumble, 1900) // need to match duration of full animation
     })
-})
+},[1])
 
 // *********** adding new job? add animation here.
 const observerWork = new IntersectionObserver(entries =>{
@@ -83,10 +92,13 @@ const observerWork = new IntersectionObserver(entries =>{
             body.style.color="black";
             body.style.transition="0.5s linear";
             leftSideLine.style.borderColor="black"
+            footer.style.backgroundColor="var(--alloverbgcolor)"
             document.querySelector("#left-git").classList.add("github")
             document.querySelector("#left-git").classList.remove("github-white")
             document.querySelector("#left-li").classList.add("linkedin")
             document.querySelector("#left-li").classList.remove("linkedin-white")
+            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(245,245,245,0.8)')
+            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(0,0,0,1)')  
             experienceImages.childNodes.forEach((child) =>{
                 if (child.id ==="one"){
                     child.classList.add("rumble-1")
@@ -104,19 +116,21 @@ const observerWork = new IntersectionObserver(entries =>{
         }, 2000)
         setTimeout(removeExpRumble, 1700)// need to match duration of full animation
     })
-})
+}, [1])
 
 const observerProj = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
             addTitleAnime('#projects')
-            projectImages.childNodes.forEach((child) =>{
-                if (child.id ==="good-food"){
-                    child.classList.add("rumble-1")
-                }else if (child.id ==="snake"){
-                    child.classList.add("rumble-2")
-                }
-            })
+            // projectImages.childNodes.forEach((child) =>{
+            //     if (child.id ==="good-food"){
+            //         child.classList.add("rumble-1")
+            //     }else if (child.id ==="snake"){
+            //         child.classList.add("rumble-2")
+            //     }else if (child.id ==="budget"){
+            //         child.classList.add("rumble-3")
+            //     }
+            // })
             
                 nav.style.backgroundColor ="var(--alloverbgcolor-proj)"
                 navTitle.style.color="whitesmoke"
@@ -129,23 +143,63 @@ const observerProj = new IntersectionObserver(entries =>{
                 body.style.color="whitesmoke";
                 body.style.transition="0.5s linear";
                 leftSideLine.style.borderColor="whitesmoke"
-                console.log(leftSideLinks.childNodes[1])
+                footer.style.backgroundColor="var(--alloverbgcolor-proj)"
 
                 document.querySelector("#left-git").classList.remove("github")
                 document.querySelector("#left-git").classList.add("github-white")
                 document.querySelector("#left-li").classList.remove("linkedin")
                 document.querySelector("#left-li").classList.add("linkedin-white")
-           
-            
-
+                document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(0,0,0,0.8)')
+                document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(255,255,255,1)')  
         }
         setTimeout(()=>{
             removeTitleAnime('#projects')
         }, 2000)
-        setTimeout(removeProjRumble, 1900) 
        
     })
 })
+
+const obsProj1 = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            addTitleAnime('#projects')
+            projectImages.childNodes.forEach((child) =>{
+                if (child.id ==="good-food"){
+                    child.classList.add("rumble-3")
+                }
+            })
+        setTimeout(removeProj1Rumble, 1900) 
+        }
+       
+    })
+},[1])
+const obsProj2 = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            addTitleAnime('#projects')
+            projectImages.childNodes.forEach((child) =>{
+                 if (child.id ==="snake"){
+                    child.classList.add("rumble-3")
+                }
+            })
+        setTimeout(removeProj2Rumble, 1900) 
+        }
+    })
+},[1])
+const obsProj3 = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            addTitleAnime('#projects')
+            projectImages.childNodes.forEach((child) =>{
+                 if (child.id ==="budget"){
+                    child.classList.add("rumble-3")
+                }
+            })
+        setTimeout(removeProj3Rumble, 1900) 
+        }
+       
+    })
+},[1])
 
 const observerContact = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
@@ -156,12 +210,13 @@ const observerContact = new IntersectionObserver(entries =>{
             nav.style.backgroundColor = 'whitesmoke';
             navTitle.style.color="black"
             leftSideLine.style.borderColor="black"
-            
+            footer.style.backgroundColor="var(--alloverbgcolor)"
             document.querySelector("#left-git").classList.add("github")
             document.querySelector("#left-git").classList.remove("github-white")
             document.querySelector("#left-li").classList.add("linkedin")
             document.querySelector("#left-li").classList.remove("linkedin-white")
-                
+            document.documentElement.style.setProperty('--projectimghoverbgcolor', 'rgba(245,245,245,0.8)')
+            document.documentElement.style.setProperty('--projectimghovercolor', 'rgba(0,0,0,1)')  
             allNavLinks.forEach(link=>{
                 link.style.color='black'
             });
@@ -171,11 +226,14 @@ const observerContact = new IntersectionObserver(entries =>{
             removeTitleAnime('#contact')
         }, 2000)
     })
-})
+},[1])
 
 observerWork.observe(experienceImages)
 observerBio.observe(bioImages)
 observerProj.observe(projectImages)
+obsProj1.observe(proj1)
+obsProj2.observe(proj2)
+obsProj3.observe(proj3)
 observerContact.observe(contactImages)
 
 
@@ -281,12 +339,24 @@ function removeExpRumble(){
     })
 }
 
-function removeProjRumble(){
+function removeProj1Rumble(){
     projectImages.childNodes.forEach((child) =>{
         if (child.id ==="good-food"){
-            child.classList.remove("rumble-1")
-        }else if (child.id ==="snake"){
-            child.classList.remove("rumble-2")
+            child.classList.remove("rumble-3")
+        }
+    })
+}
+function removeProj2Rumble(){
+    projectImages.childNodes.forEach((child) =>{
+        if (child.id ==="snake"){
+            child.classList.remove("rumble-3")
+        }
+    })
+}
+function removeProj3Rumble(){
+    projectImages.childNodes.forEach((child) =>{
+        if (child.id ==="budget"){
+            child.classList.remove("rumble-3")
         }
     })
 }
