@@ -562,23 +562,23 @@ ul li{
   width: 40px;
 }
 .github{
-  background-image: url('./img/github.PNG');
+  background-image: url('../img/github.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
 .linkedin{
-  background-image: url('./img/linkedin.PNG');
+  background-image: url('../img/linkedin.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .github-white{
-  background-image: url('./img/github-white.PNG');
+  background-image: url('../img/github-white.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
 .linkedin-white{
-  background-image: url('./img/linkedin-white.PNG');
+  background-image: url('../img/linkedin-white.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
