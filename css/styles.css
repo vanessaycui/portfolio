@@ -82,7 +82,7 @@ svg text {
   stroke: var( --strokelinesname);
   font-size: 3rem;
   font-weight: 700;
-  stroke-width: 2px;
+  stroke-width: 0px;
   animation: textAnimate 5s infinite alternate;
  }
 
