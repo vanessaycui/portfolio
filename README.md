@@ -14,3 +14,9 @@ Features:
 
 </div>
 
+
+## **TECHNOLOGIES**
+- HTML
+- CSS
+- JavaScript
+
