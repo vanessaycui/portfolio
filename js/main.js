@@ -25,6 +25,8 @@ const entireWindow = document.querySelector('*')
 
 const bioImages = document.querySelector('#right-about-container')
 const experienceImages = document.querySelector('#about-experience-roles')
+const experienceRoles = document.querySelectorAll('#about-experience-roles > div')
+
 const experienceSection = document.querySelector('.job-tabs')
 const projectImages = document.querySelector('.project-card-container')
 const proj1 = document.querySelector('#good-food')
@@ -115,6 +117,9 @@ const observerWork = new IntersectionObserver(entries =>{
             document.documentElement.style.setProperty('--scrollbar', '#37474F')
             document.documentElement.style.setProperty('--scrollbartrack', 'var(--alloverbgcolor)')
             document.documentElement.style.setProperty('--scrollbarthumb', 'var(--alloverbgcolor')
+            experienceRoles.forEach(role=>{
+                role.style.color = 'var(--navbarlinks)'
+            })
             experienceImages.childNodes.forEach((child) =>{
                 if (child.id ==="one"){
                     child.classList.add("rumble-1")
@@ -195,6 +200,9 @@ const observerProj = new IntersectionObserver(entries =>{
                 document.documentElement.style.setProperty('--scrollbartrack', 'var(--alloverbgcolor-proj')
                 document.documentElement.style.setProperty('--scrollbar', 'var(--alloverbgcolor)')
                 document.documentElement.style.setProperty('--scrollbarthumb', 'var(--alloverbgcolor-proj')
+                experienceRoles.forEach(role=>{
+                    role.style.color = 'var(--navbarlinks)'
+                })
         }
         setTimeout(()=>{
             removeTitleAnime('#projects')

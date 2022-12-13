@@ -805,7 +805,7 @@ footer{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    height:auto;
+    min-height:100vh;
   }
 
   #about-experience{
@@ -923,7 +923,8 @@ footer{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 100%
+    width: 100%;
+    min-height:100vh;
   }
   
   .centered-info{
